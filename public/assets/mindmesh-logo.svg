@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60">
+  <rect width="240" height="60" fill="#111111" rx="6"/>
+  <circle cx="30" cy="30" r="16" fill="#FFD21F" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="30" y="36" font-family="sans-serif" font-weight="900" font-size="16" fill="#111111" text-anchor="middle">M</text>
+  <text x="60" y="38" font-family="sans-serif" font-weight="900" font-size="22" fill="#FFFFFF">MIND<tspan fill="#FFD21F">MESH</tspan></text>
+</svg>

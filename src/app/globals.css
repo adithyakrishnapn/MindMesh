@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --black: #111111;
+  --white: #ffffff;
+  --yellow: #ffd21f;
+  --off-white: #f7f7f3;
+  --gray: #777777;
+}
+
+::selection {
+  background-color: #ffd21f;
+  color: #111111;
+}
+
+html {
+  scroll-behavior: initial;
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+body {
+  background-color: var(--off-white);
+  color: var(--black);
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Playful utility styles */
+.badge-sticker {
+  display: inline-block;
+  background-color: #ffd21f;
+  color: #111111;
+  font-family: var(--font-mono), monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.25rem 0.75rem;
+  border: 2px solid #111111;
+  box-shadow: 3px 3px 0px #111111;
+  transform: rotate(-3deg);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.badge-sticker:hover {
+  transform: rotate(0deg) scale(1.05);
+  box-shadow: 5px 5px 0px #111111;
+}
+
+.card-playful {
+  background-color: #ffffff;
+  border: 2px solid #111111;
+  box-shadow: 6px 6px 0px #111111;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.card-playful:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 10px 10px 0px #111111;
+}
+
+.card-playful-yellow {
+  background-color: #ffd21f;
+  border: 2px solid #111111;
+  box-shadow: 6px 6px 0px #111111;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.card-playful-yellow:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 10px 10px 0px #111111;
+}
+
+.font-handwriting {
+  font-family: var(--font-handwriting), cursive, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+::-webkit-scrollbar-thumb {
+  background: #ffd21f;
+  border: 2px solid #111111;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+
+/* Dots pattern background utility */
+.bg-dot-pattern {
+  background-image: radial-gradient(#111111 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+.bg-dot-pattern-light {
+  background-image: radial-gradient(rgba(255, 210, 31, 0.4) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+/* SVG Line Dash Animation */
+@keyframes dashAnimation {
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+
+.animate-dash-line {
+  stroke-dasharray: 8 8;
+  animation: dashAnimation 4s linear infinite;
+}
