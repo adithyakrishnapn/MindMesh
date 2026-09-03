@@ -12,7 +12,7 @@ import HowItWorks from "@/components/HowItWorks";
 import TeamMesh from "@/components/TeamMesh";
 import Prizes from "@/components/Prizes";
 import Organizers from "@/components/Organizers";
-import FAQ from "@/components/FAQ";
+import TermsAndConditions from "@/components/TermsAndConditions";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 
@@ -33,7 +33,7 @@ export default function Home() {
       <TeamMesh />
       <Prizes />
       <Organizers />
-      <FAQ />
+      <TermsAndConditions />
       <FinalCTA />
       <Footer />
     </main>

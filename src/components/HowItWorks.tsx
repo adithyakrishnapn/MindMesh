@@ -7,7 +7,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export default function HowItWorks() {
   return (
-    <section className="relative w-full py-24 bg-white border-b-4 border-meshBlack overflow-hidden">
+    <section id="how-it-works" className="relative w-full py-24 bg-white border-b-4 border-meshBlack overflow-hidden">
       {/* Dots Pattern */}
       <div className="absolute inset-0 bg-dot-pattern opacity-20 pointer-events-none" />
 

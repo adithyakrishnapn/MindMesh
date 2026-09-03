@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { hackathon } from "@/data/hackathon";
-import { Instagram, Linkedin, Globe, ArrowUp } from "lucide-react";
+import { Instagram, Linkedin, Globe, ArrowUp, FileText } from "lucide-react";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -44,29 +44,34 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 font-mono text-xs font-bold text-meshGray uppercase">
               <li>
-                <a href="#about" className="hover:text-meshYellow transition-colors">
+                <a href="/#about" className="hover:text-meshYellow transition-colors">
                   ABOUT EVENT
                 </a>
               </li>
               <li>
-                <a href="#challenge" className="hover:text-meshYellow transition-colors">
+                <a href="/#challenge" className="hover:text-meshYellow transition-colors">
                   CHALLENGE TRACKS
                 </a>
               </li>
               <li>
-                <a href="#timeline" className="hover:text-meshYellow transition-colors">
+                <a href="/#timeline" className="hover:text-meshYellow transition-colors">
                   24H SCHEDULE
                 </a>
               </li>
               <li>
-                <a href="#prizes" className="hover:text-meshYellow transition-colors">
+                <a href="/#prizes" className="hover:text-meshYellow transition-colors">
                   PRIZES & REWARDS
                 </a>
               </li>
               <li>
-                <a href="#faq" className="hover:text-meshYellow transition-colors">
-                  FAQ
+                <a href="/#terms" className="hover:text-meshYellow transition-colors">
+                  TERMS & CONDITIONS
                 </a>
+              </li>
+              <li className="pt-2 border-t border-meshDarkGray">
+                <Link href="/terms" className="text-meshYellow hover:text-white transition-colors flex items-center gap-1.5">
+                  <FileText className="w-3.5 h-3.5" /> TERMS & CONDITIONS
+                </Link>
               </li>
             </ul>
           </div>
@@ -122,7 +127,12 @@ export default function Footer() {
         {/* Bottom Legal & Copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-meshGray">
           <p>© 2026 MindMesh • SNSCE CSE. All rights reserved.</p>
-          <p>Department of Computer Science & Engineering, SNSCE Coimbatore.</p>
+          <p>
+            Department of Computer Science & Engineering, SNSCE •{" "}
+            <Link href="/terms" className="underline hover:text-meshYellow">
+              Terms & Conditions
+            </Link>
+          </p>
         </div>
 
       </div>
