@@ -38,6 +38,10 @@ export default function MagneticButton({
     setPosition({ x: 0, y: 0 });
   };
 
+  const hasBg = /\bbg-/.test(className);
+  const hasTextColor = /\btext-(?!xs|sm|base|lg|xl|[0-9])/.test(className);
+  const defaultColors = `${hasBg ? "" : "bg-meshYellow"} ${hasTextColor ? "" : "text-meshBlack"}`;
+
   const content = (
     <motion.div
       ref={buttonRef}
@@ -49,7 +53,7 @@ export default function MagneticButton({
     >
       <button
         onClick={onClick}
-        className={`interactive-btn relative group inline-flex items-center justify-center font-display font-bold uppercase tracking-wider text-meshBlack bg-meshYellow border-2 border-meshBlack px-6 py-3.5 shadow-retro transition-all duration-200 hover:shadow-retroLg active:translate-x-1 active:translate-y-1 active:shadow-none ${className}`}
+        className={`interactive-btn relative group inline-flex items-center justify-center font-display font-bold uppercase tracking-wider border-2 border-meshBlack px-6 py-3.5 shadow-retro transition-all duration-200 hover:shadow-retroLg active:translate-x-1 active:translate-y-1 active:shadow-none ${defaultColors} ${className}`}
         {...props}
       >
         <span className="relative z-10 flex items-center gap-2 group-hover:scale-[1.02] transition-transform">

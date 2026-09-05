@@ -68,7 +68,7 @@ export default function Footer() {
 
             <div className="mt-4 flex items-center gap-2 text-xs font-mono text-gray-400">
               <MapPin className="w-3.5 h-3.5 text-[#00E5FF]" />
-              <span>SNS AI Campus, Coimbatore</span>
+              <span>DT Playhouse, SNS AI Campus, Coimbatore</span>
             </div>
           </div>
 

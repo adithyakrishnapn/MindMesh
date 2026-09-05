@@ -190,7 +190,7 @@ export default function About() {
         <div className="mt-16 pt-8 border-t-2 border-meshBlack/10 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <span className="badge-sticker bg-[#FFD21F] text-black">
-              SNS AI CAMPUS
+              DT PLAYHOUSE
             </span>
             <span className="font-mono text-xs font-bold text-meshBlack uppercase tracking-wider">
               {hackathon.durationTag}

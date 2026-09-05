@@ -91,8 +91,9 @@ export const hackathon = {
   startTime: "9:00 AM ONWARDS",
   duration: "24 Hours",
   durationTag: "ONE DAY. ENDLESS POSSIBILITIES.",
-  venue: "SNS AI Campus, SNS College of Technology, Coimbatore",
-  campusName: "SNS AI CAMPUS",
+  venue: "DT Playhouse, SNS College of Technology, Coimbatore",
+  venueHall: "DT PLAYHOUSE",
+  campusName: "DT PLAYHOUSE, SNS AI CAMPUS",
   mode: "In-Person 24-Hour Campus Hackathon",
   teamSize: "2 - 4 Members per team",
   
@@ -240,112 +241,112 @@ export const hackathon = {
 
   stats: [
     { value: "24", unit: "HOURS", label: "Non-Stop Building", description: "One Day. Endless Possibilities." },
-    { value: "18", unit: "SEP", label: "17-18 September 2026", description: "From 9:00 AM Onwards @ SNS AI Campus" },
+    { value: "18", unit: "SEP", label: "17-18 September 2026", description: "From 9:00 AM Onwards @ DT Playhouse" },
     { value: "550", unit: "INR", label: "External Fee ₹550", description: "All-inclusive 24H hackathon experience" },
     { value: "1000", unit: "STARTUPS", label: "SNS I-Startups", description: "Celebrated in 10 Years of Innovation" }
   ],
 
   tracks: [
     {
-      id: "gen-ai-agents",
-      title: "GENAI & AUTONOMOUS AGENTS",
-      category: "INTELLIGENT SYSTEMS",
-      description: "Build cutting-edge autonomous AI agents, multi-agent frameworks, fine-tuned LLM workflows, and intelligent reasoning pipelines.",
-      longDescription: "Harness state-of-the-art transformer architectures, autonomous reasoning loops, tool-calling agents, and enterprise RAG pipelines to automate complex multi-step human cognitive workflows.",
-      iconName: "BrainCircuit",
-      accentColor: "#00E5FF",
-      cardStyle: "standard",
-      tags: ["Agentic AI", "LLMs", "RAG", "Multi-Agent", "LangChain", "Ollama"],
-      highlights: [
-        "Autonomous multi-agent collaboration frameworks",
-        "Low-latency streaming LLM integrations",
-        "Zero-shot function calling & dynamic tools",
-        "Production-grade prompt eval & safety rails"
-      ]
-    },
-    {
-      id: "vision-robotics",
-      title: "COMPUTER VISION & EMBEDDED AI",
-      category: "NEXT-GEN COMPUTING",
-      description: "Craft spatial computing apps, real-time object detection systems, edge AI inference, and autonomous hardware prototypes.",
-      longDescription: "Push computer vision to the physical edge. Build real-time perception models for autonomous robotics, spatial computing headsets, edge TPUs, and IoT sensory networks.",
-      iconName: "Globe",
-      accentColor: "#FFD21F",
-      cardStyle: "rotated",
-      tags: ["OpenCV", "Edge AI", "IoT", "Spatial", "YOLOv10", "ESP32"],
-      highlights: [
-        "Real-time 60FPS object detection & segmentation",
-        "Edge TPU and microcontroller deployment",
-        "Spatial mapping & trajectory tracking",
-        "Industrial IoT anomaly detection systems"
-      ]
-    },
-    {
-      id: "healthcare-ai",
-      title: "AI IN HEALTHCARE & MEDTECH",
-      category: "HUMAN IMPACT",
-      description: "Innovate clinical diagnostics, predictive health monitors, patient assistive AI, and intelligent bio-medical data synthesizers.",
-      longDescription: "Design empathetic, clinically sound, and compliant AI solutions that empower doctors, streamline diagnostics, and make preventive healthcare accessible to millions.",
+      id: "medtech-healthtech",
+      title: "MEDTECH / BIOTECH / HEALTHTECH",
+      category: "HEALTHCARE & LIFE SCIENCES",
+      description: "Build clinical diagnostics, bio-signal monitoring, genomic analysis, assistive medical hardware, and AI predictive healthcare.",
+      longDescription: "Transform modern healthcare through AI-assisted diagnosis, telemedicine, wearable biomedical sensors, computer vision pathology, and personalized health recommendation engines.",
       iconName: "HeartPulse",
       accentColor: "#00E5FF",
-      cardStyle: "wide",
-      tags: ["Diagnostics", "MedTech", "Assistive AI", "BioInformatics", "FastAPI"],
-      highlights: [
-        "Multimodal clinical data synthesis & analysis",
-        "Early-stage biomarker & radiology detection",
-        "HIPAA/privacy-conscious local inference",
-        "Assistive speech & vision interfaces for patients"
-      ]
-    },
-    {
-      id: "fintech-defense",
-      title: "AI DEFENSE & FINTECH SECURITY",
-      category: "FINANCIAL INTELLIGENCE",
-      description: "Design automated fraud prevention systems, AI vulnerability scanners, smart audit agents, and predictive market models.",
-      longDescription: "Build defensive AI architectures capable of analyzing high-frequency transaction streams, detecting sophisticated fraud rings, auditing smart contracts, and hardening cyber perimeters.",
-      iconName: "ShieldCheck",
-      accentColor: "#111111",
       cardStyle: "standard",
-      tags: ["Fraud Detection", "Cyber Defense", "Smart Contracts", "Risk AI", "Web3"],
+      tags: ["MedTech", "BioTech", "Diagnostics", "Computer Vision", "Wearables", "HIPAA"],
       highlights: [
-        "Graph neural networks for financial ring fraud",
-        "Real-time anomaly scoring in milli-seconds",
-        "Automated smart contract vulnerability fuzzing",
-        "AI honeypots & proactive threat modeling"
+        "Real-time patient vital anomaly detection",
+        "AI-assisted radiology & pathology imaging",
+        "Genomic sequence & biological data modeling",
+        "Affordable rural healthcare diagnostic kits"
       ]
     },
     {
-      id: "smart-sustainability",
-      title: "SMART SUSTAINABILITY & CLEANTECH",
-      category: "GREEN INNOVATION",
-      description: "Develop AI energy dispatchers, carbon intelligence platforms, smart agricultural analytics, and circular waste systems.",
-      longDescription: "Harness artificial intelligence to combat climate change, optimize renewable microgrids, automate precision agriculture, and build circular supply chains.",
+      id: "smart-automation",
+      title: "SMART AUTOMATION",
+      category: "ROBOTICS & INTELLIGENT SYSTEMS",
+      description: "Engineer autonomous robotic workflows, industrial IoT intelligence, agentic process automation, and intelligent edge control.",
+      longDescription: "Design next-gen automation engines connecting hardware controllers, vision pipelines, predictive machinery maintenance, and autonomous multi-agent task execution.",
+      iconName: "Cpu",
+      accentColor: "#FFD21F",
+      cardStyle: "rotated",
+      tags: ["Robotics", "Industrial IoT", "Edge AI", "Agentic Automation", "Microcontrollers", "YOLO"],
+      highlights: [
+        "Autonomous industrial robotics & cobots",
+        "Predictive equipment maintenance & digital twins",
+        "Vision-guided quality inspection pipelines",
+        "Low-latency edge microcontroller inference"
+      ]
+    },
+    {
+      id: "clean-green-tech",
+      title: "CLEAN AND GREEN TECHNOLOGY",
+      category: "SUSTAINABILITY & CLIMATE",
+      description: "Develop renewable energy microgrids, carbon footprint intelligence, automated waste segregation, and circular economy platforms.",
+      longDescription: "Empower planetary sustainability through AI microgrid management, satellite crop & water monitoring, automated recyclable sorting, and transparent corporate emission tracking.",
       iconName: "Leaf",
       accentColor: "#00E5FF",
       cardStyle: "circle",
-      tags: ["Climate AI", "Clean Energy", "Smart Agriculture", "Carbon AI", "GeoSpatial"],
+      tags: ["CleanTech", "Renewable Energy", "Smart Agriculture", "Waste AI", "Carbon Accounting", "GeoAI"],
       highlights: [
-        "Dynamic renewable energy grid balancing",
-        "Satellite vision for crop health & yield prediction",
-        "Automated industrial waste sorting & reduction",
-        "Verifiable corporate carbon accounting"
+        "Smart renewable microgrid load balancing",
+        "Automated computer-vision waste segregation",
+        "Precision agriculture & soil moisture analytics",
+        "Verifiable corporate carbon tracking"
       ]
     },
     {
-      id: "open-innovation",
-      title: "OPEN AI INNOVATION",
-      category: "UNBOUNDED BREAKTHROUGHS",
-      description: "Have a radical disruptive AI concept outside standard verticals? Harness raw creativity to build something historic.",
-      longDescription: "Unleash unbounded creativity. Whether it is brain-computer interfaces, generative music engines, quantum computing simulators, or next-gen gaming physics — build the unthinkable.",
-      iconName: "Sparkles",
+      id: "disaster-management",
+      title: "DISASTER MANAGEMENT",
+      category: "PUBLIC SAFETY & RESILIENCE",
+      description: "Architect early warning flood/earthquake systems, autonomous search & rescue drones, emergency mesh networks, and relief dispatchers.",
+      longDescription: "Deliver life-saving situational awareness in high-stakes crises. Combine satellite imagery, GIS sensory feeds, real-time rescue communication mesh, and predictive casualty forecasting.",
+      iconName: "ShieldAlert",
       accentColor: "#FFD21F",
       cardStyle: "wide",
-      tags: ["Wildcard", "Neurotech", "DeepTech", "Creative AI", "Zero Limits"],
+      tags: ["Disaster AI", "Search & Rescue", "Early Warning", "Drones", "GIS / Satellite", "Mesh Networks"],
       highlights: [
-        "Zero restrictions on theme, architecture or stack",
-        "Judged on pure novelty, technical ambition & execution",
-        "SNS Design Thinking Framework mentoring",
-        "Incubation fast-track for outlier innovations"
+        "Predictive flood, cyclone & wildfire forecasting",
+        "Thermal drone vision for survivor search & rescue",
+        "Decentralized offline mesh communication",
+        "Dynamic emergency supplies dispatch logistics"
+      ]
+    },
+    {
+      id: "transportation-logistics",
+      title: "TRANSPORTATION & LOGISTICS",
+      category: "MOBILITY & SUPPLY CHAIN",
+      description: "Optimize autonomous fleet dispatch, real-time urban traffic routing, cold-chain monitoring, and multi-modal supply chain logistics.",
+      longDescription: "Pioneer next-generation smart mobility. Build dynamic route optimization models, port and warehouse automation systems, vehicle-to-everything (V2X) safety tech, and last-mile delivery frameworks.",
+      iconName: "Truck",
+      accentColor: "#00E5FF",
+      cardStyle: "standard",
+      tags: ["Smart Mobility", "Supply Chain", "V2X", "Fleet AI", "Route Optimization", "Cold Chain"],
+      highlights: [
+        "Real-time urban traffic congestion dissipation",
+        "Predictive multi-modal supply chain optimization",
+        "Autonomous last-mile delivery tracking",
+        "Cold-chain pharmaceutical temperature monitors"
+      ]
+    },
+    {
+      id: "cybersecurity",
+      title: "CYBERSECURITY",
+      category: "DIGITAL DEFENSE & TRUST",
+      description: "Build AI intrusion detection shields, automated zero-day vulnerability scanners, privacy-preserving cryptographic pipelines, and fraud prevention.",
+      longDescription: "Harden global cyber defense infrastructure. Deploy generative threat modeling, automated binary exploit detection, decentralized identity verification, and adversarial neural defense mechanisms.",
+      iconName: "ShieldCheck",
+      accentColor: "#111111",
+      cardStyle: "wide",
+      tags: ["Zero Trust", "Threat Intelligence", "Fraud AI", "DevSecOps", "Anomaly Detection", "Cryptography"],
+      highlights: [
+        "Automated real-time network anomaly detection",
+        "Generative threat hunting & honeypot defense",
+        "Smart contract vulnerability fuzzing",
+        "Privacy-preserving federated machine learning"
       ]
     }
   ] as Track[],
@@ -355,7 +356,7 @@ export const hackathon = {
       time: "09:00 AM",
       title: "CHECK-IN & KICKOFF",
       phase: "HOUR 00 — 17 SEP",
-      description: "Arrival at SNS AI Campus, registration verification, participant kit collection, and electrifying opening ceremony.",
+      description: "Arrival at DT Playhouse, SNS AI Campus, registration verification, participant kit collection, and electrifying opening ceremony.",
       highlight: "DOORS OPEN",
       icon: "DoorOpen"
     },
@@ -513,7 +514,7 @@ export const hackathon = {
     {
       step: "03",
       title: "24 HOURS OF AI BUILDING",
-      desc: "Report at SNS AI Campus at 9:00 AM on 17 Sep. Hack non-stop with expert mentorship, Wi-Fi, and 24H facilities."
+      desc: "Report at DT Playhouse, SNS AI Campus at 9:00 AM on 17 Sep. Hack non-stop with expert mentorship, Wi-Fi, and 24H facilities."
     },
     {
       step: "04",
@@ -526,12 +527,12 @@ export const hackathon = {
     {
       id: "faq-1",
       question: "What is HACKNEXT'26 Series 2.0?",
-      answer: "HACKNEXT'26 Series 2.0 is an elite AI-Powered 24-Hour Hackathon hosted at SNS AI Campus, SNS College of Technology (SNSCT), Coimbatore. It brings together ambitious student innovators from across the country to code, create, conquer, and transform real-world problems into intelligent products."
+      answer: "HACKNEXT'26 Series 2.0 is an elite AI-Powered 24-Hour Hackathon hosted at DT Playhouse, SNS AI Campus, SNS College of Technology (SNSCT), Coimbatore. It brings together ambitious student innovators from across the country to code, create, conquer, and transform real-world problems into intelligent products."
     },
     {
       id: "faq-2",
       question: "When and where is HACKNEXT'26 taking place?",
-      answer: "The hackathon will take place in-person on 17 and 18 September 2026, kicking off from 9:00 AM onwards at the SNS AI Campus, SNS College of Technology, Coimbatore - 641035."
+      answer: "The hackathon will take place in-person on 17 and 18 September 2026, kicking off from 9:00 AM onwards at DT Playhouse, SNS AI Campus, SNS College of Technology, Coimbatore - 641035."
     },
     {
       id: "faq-3",

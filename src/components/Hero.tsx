@@ -134,7 +134,7 @@ export default function Hero() {
               </div>
               <div className="bg-white p-2.5 border-2 border-black shadow-retro flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-black shrink-0" />
-                <span className="truncate">AI CAMPUS</span>
+                <span className="truncate">DT PLAYHOUSE</span>
               </div>
               <div className="bg-meshYellow p-2.5 border-2 border-black shadow-retro flex items-center gap-2">
                 <span className="font-black text-sm">₹550</span>
@@ -146,9 +146,12 @@ export default function Hero() {
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <MagneticButton
                 href="#register"
-                className="text-sm px-8 py-4 bg-meshBlack text-meshYellow hover:bg-[#00E5FF] hover:text-black"
+                className="text-sm sm:text-base px-8 py-4 bg-meshYellow text-meshBlack font-black hover:bg-[#00E5FF] hover:text-black border-2 border-meshBlack shadow-retro hover:shadow-retroLg transition-all"
               >
-                REGISTER NOW (₹550) <ArrowUpRight className="w-5 h-5" />
+                <span className="relative z-10 flex items-center gap-2 font-display font-black tracking-wider text-meshBlack uppercase">
+                  REGISTER NOW (₹550)
+                  <ArrowUpRight className="w-5 h-5 text-meshBlack group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                </span>
               </MagneticButton>
 
               <a
@@ -210,7 +213,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-wrap items-center justify-between gap-4 border-t-2 border-meshBlack/10 pt-4">
         <div className="flex items-center gap-2 text-xs font-mono font-bold text-meshBlack">
           <span className="w-2 h-2 rounded-full bg-[#00E5FF]" />
-          <span>IN-PERSON @ SNS AI CAMPUS, COIMBATORE</span>
+          <span>IN-PERSON @ DT PLAYHOUSE, SNS AI CAMPUS, COIMBATORE</span>
         </div>
 
         <a

@@ -10,7 +10,7 @@ export const termsData = {
   subtitle: "HACKNEXT'26 — SERIES 2.0 (AI-POWERED 24-HOUR HACKATHON)",
   organizer: {
     college: "SNS College of Technology, Coimbatore",
-    campus: "SNS AI Campus",
+    campus: "DT Playhouse, SNS AI Campus",
     dates: "17, 18 September 2026",
     startTime: "9:00 AM Onwards",
     fee: "₹550 per external participant",
@@ -50,7 +50,7 @@ export const termsData = {
       title: "Problem Statement & Duration",
       content: [
         "Problem statements and AI domain tracks are formulated to test real-world innovation under the 24-hour sprint duration.",
-        "Teams must develop their solution within the official 24-hour hackathon duration starting at 9:00 AM on 17 September 2026.",
+        "Teams must develop their solution within the official 24-hour hackathon duration starting at 9:00 AM on 17 September 2026 at DT Playhouse, SNS College of Technology, Coimbatore.",
       ],
     },
     {
@@ -59,7 +59,7 @@ export const termsData = {
       title: "Participation Fee & Inclusions",
       content: [
         "External participants must complete the registration fee payment of ₹550 per participant through the designated official payment gateway or on-campus desk.",
-        "The registration fee covers 24-hour hackathon access, high-speed Wi-Fi, mentorship sessions, participation certificates, and lab facilities at SNS AI Campus.",
+        "The registration fee covers 24-hour hackathon access, high-speed Wi-Fi, mentorship sessions, participation certificates, and lab facilities at DT Playhouse, SNS AI Campus.",
       ],
     },
     {
