@@ -155,7 +155,7 @@ export default function Hero() {
                 href="#register"
                 className="inline-flex items-center gap-2 font-display font-bold text-xs uppercase tracking-wider px-6 py-4 border-2 border-meshBlack bg-white hover:bg-meshYellow transition-colors shadow-retro"
               >
-                <QrCode className="w-4 h-4" /> SCAN QR CODE
+                <QrCode className="w-4 h-4" /> SCAN FORM QR
               </a>
             </div>
           </div>

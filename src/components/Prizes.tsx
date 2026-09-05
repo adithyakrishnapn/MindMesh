@@ -100,7 +100,7 @@ export default function Prizes() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.4 }}
-              className={`p-6 border-2 flex flex-col justify-between relative cursor-pointer transform hover:-translate-y-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group ${
+              className={`p-6 border-2 flex flex-col justify-between relative cursor-pointer overflow-hidden transform hover:-translate-y-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group ${
                 prize.featured
                   ? "bg-[#00E5FF] text-meshBlack border-white shadow-retroWhite hover:shadow-[10px_10px_0px_0px_#FFD21F]"
                   : "bg-meshDarkGray text-meshWhite border-[#00E5FF]/60 shadow-[5px_5px_0px_0px_#00E5FF] hover:shadow-[10px_10px_0px_0px_#00E5FF]"
@@ -115,10 +115,10 @@ export default function Prizes() {
               }}
             >
               {/* Badge & Pop-Up chip */}
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                 {prize.badge && (
                   <span
-                    className={`font-mono text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 border ${
+                    className={`font-mono text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 border shrink-0 ${
                       prize.featured
                         ? "bg-meshBlack text-[#00E5FF] border-meshBlack"
                         : "bg-[#00E5FF] text-meshBlack border-[#00E5FF]"
@@ -127,26 +127,26 @@ export default function Prizes() {
                     {prize.badge}
                   </span>
                 )}
-                <span className="font-mono text-[10px] font-bold uppercase bg-black text-white px-2 py-0.5 border border-white/40 group-hover:bg-[#FFD21F] group-hover:text-black transition-colors">
+                <span className="font-mono text-[9px] sm:text-[10px] font-bold uppercase bg-black text-white px-2 py-0.5 border border-white/40 group-hover:bg-[#FFD21F] group-hover:text-black transition-colors shrink-0">
                   POP UP ↗
                 </span>
               </div>
 
               <div>
-                <h3 className="font-display font-black text-2xl uppercase">
+                <h3 className="font-display font-black text-xl sm:text-2xl uppercase tracking-tight">
                   {prize.title}
                 </h3>
                 <p
-                  className={`font-mono text-xs font-bold mt-1 ${
+                  className={`font-mono text-xs font-bold mt-1 truncate ${
                     prize.featured ? "text-meshBlack/80" : "text-meshGray"
                   }`}
                 >
                   {prize.subtitle}
                 </p>
 
-                {/* Amount */}
-                <div className="my-6">
-                  <span className="font-display font-black text-4xl sm:text-5xl tracking-tight">
+                {/* Amount with No Overflow */}
+                <div className="my-5 overflow-hidden">
+                  <span className="font-display font-black text-2xl sm:text-3xl lg:text-[1.85rem] xl:text-3xl tracking-tight uppercase leading-none whitespace-nowrap block truncate">
                     {prize.amount}
                   </span>
                 </div>

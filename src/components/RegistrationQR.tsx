@@ -18,6 +18,9 @@ import {
   MapPin,
   Maximize2,
   X,
+  CreditCard,
+  FileText,
+  UserCheck,
 } from "lucide-react";
 
 export default function RegistrationQR() {
@@ -58,7 +61,10 @@ export default function RegistrationQR() {
           </h2>
 
           <p className="mt-4 font-body text-base sm:text-lg text-gray-300 font-medium leading-relaxed">
-            Secure your slot for <strong className="text-white">HACKNEXT'26 SERIES 2.0</strong>. Scan the official QR code or use the direct registration portal below.
+            Scan this QR code with your phone camera or Google Lens to open the official Google Registration Form.{" "}
+            <strong className="text-[#FFD21F] bg-black/40 px-2 py-0.5 border border-[#FFD21F]/30">
+              The fee payment QR (₹550) is provided directly inside the form!
+            </strong>
           </p>
         </div>
 
@@ -80,11 +86,11 @@ export default function RegistrationQR() {
                 <div className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#00E5FF] animate-ping" />
                   <span className="font-mono text-xs font-black tracking-widest text-[#00E5FF] uppercase">
-                    SCAN WITH ANY UPI / LENS APP
+                    SCAN TO OPEN GOOGLE FORM
                   </span>
                 </div>
                 <span className="badge-sticker bg-[#FFD21F] text-black text-[10px]">
-                  SERIES 2.0
+                  FORM QR
                 </span>
               </div>
 
@@ -97,7 +103,7 @@ export default function RegistrationQR() {
                 <div className="relative w-full h-full flex items-center justify-center">
                   <Image
                     src={hackathon.qrCodePath}
-                    alt="HackNext'26 Registration QR Code"
+                    alt="HackNext'26 Registration Form QR Code"
                     width={280}
                     height={280}
                     className="object-contain w-full h-full"
@@ -116,23 +122,23 @@ export default function RegistrationQR() {
                 <div className="absolute inset-0 bg-[#050811]/70 opacity-0 group-hover/qr:opacity-100 transition-opacity flex flex-col items-center justify-center gap-2">
                   <Maximize2 className="w-8 h-8 text-[#00E5FF] animate-bounce" />
                   <span className="font-mono text-xs font-bold text-white uppercase tracking-wider">
-                    Click to Zoom QR
+                    Click to Zoom Form QR
                   </span>
                 </div>
               </div>
 
-              {/* Bottom Badge from Poster: "LIMITED SLOTS! REGISTER NOW!" */}
+              {/* Bottom Clarification Badge */}
               <div className="mt-4 pt-3 border-t border-gray-700 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
                 <div>
                   <span className="font-display font-black text-sm text-[#FFD21F] uppercase tracking-wider block">
-                    {hackathon.slotsNote}
+                    PAYMENT QR IS INSIDE FORM
                   </span>
-                  <span className="font-mono text-[11px] text-gray-400">
-                    Registration opens on rolling basis
+                  <span className="font-mono text-[11px] text-gray-300">
+                    Scan form QR ➔ Pay ₹550 via QR inside form
                   </span>
                 </div>
 
-                <div className="bg-[#00E5FF] text-black font-display font-black text-xs px-3 py-1.5 border border-black shadow-retro">
+                <div className="bg-[#00E5FF] text-black font-display font-black text-xs px-3 py-1.5 border border-black shadow-retro whitespace-nowrap">
                   ₹550 / PARTICIPANT
                 </div>
               </div>
@@ -143,6 +149,41 @@ export default function RegistrationQR() {
           {/* Right Column: Registration Details, Fee Breakdown & Action Links */}
           <div className="lg:col-span-7 flex flex-col gap-6">
             
+            {/* 3-Step Registration & Payment Flow Guide */}
+            <div className="p-5 bg-meshBlack border-2 border-[#00E5FF] shadow-[6px_6px_0px_0px_#FFD21F]">
+              <span className="font-mono text-xs font-black uppercase text-[#FFD21F] tracking-widest block mb-3 flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-[#FFD21F]" /> HOW REGISTRATION & PAYMENT WORKS:
+              </span>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+                <div className="p-3 bg-[#111827] border border-gray-700">
+                  <div className="flex items-center gap-2 font-display font-black text-[#00E5FF] mb-1">
+                    <QrCode className="w-4 h-4" /> 01. SCAN QR
+                  </div>
+                  <p className="text-gray-300 text-[11px] leading-relaxed">
+                    Scan the QR on this page or click "OPEN FORM" to access the official Google Form.
+                  </p>
+                </div>
+
+                <div className="p-3 bg-[#111827] border border-gray-700">
+                  <div className="flex items-center gap-2 font-display font-black text-[#00E5FF] mb-1">
+                    <FileText className="w-4 h-4" /> 02. SQUAD INFO
+                  </div>
+                  <p className="text-gray-300 text-[11px] leading-relaxed">
+                    Enter your team details (2-4 members), college name, and chosen AI innovation domain.
+                  </p>
+                </div>
+
+                <div className="p-3 bg-[#111827] border-2 border-[#FFD21F]">
+                  <div className="flex items-center gap-2 font-display font-black text-[#FFD21F] mb-1">
+                    <CreditCard className="w-4 h-4" /> 03. PAY VIA FORM QR
+                  </div>
+                  <p className="text-gray-300 text-[11px] leading-relaxed">
+                    Scan the Fee Payment QR (₹550) embedded inside the Google Form and upload payment proof.
+                  </p>
+                </div>
+              </div>
+            </div>
+
             {/* Participation Fee & Venue Highlight Box */}
             <div className="card-playful p-6 sm:p-8 bg-[#161F30] border-2 border-[#00E5FF] text-white">
               <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
@@ -200,7 +241,7 @@ export default function RegistrationQR() {
             {/* Direct Form Link Actions Card */}
             <div className="p-6 bg-[#111827] border-2 border-gray-700">
               <span className="font-mono text-xs font-bold text-gray-400 uppercase tracking-widest block mb-2">
-                PREFER DIRECT FORM LINK?
+                PREFER DIRECT FORM LINK ON YOUR DEVICE?
               </span>
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
@@ -230,7 +271,7 @@ export default function RegistrationQR() {
               </div>
 
               <p className="mt-3 font-mono text-[11px] text-gray-400">
-                * Note: Registration link and QR code can be updated at any moment. Confirmation will be verified upon arrival.
+                * Note: The payment QR code for ₹550 fee is located inside this Google Form. Confirmation will be verified upon arrival.
               </p>
             </div>
 
@@ -285,20 +326,20 @@ export default function RegistrationQR() {
 
               <div className="text-center mb-4">
                 <span className="badge-sticker bg-[#FFD21F] text-black text-xs mb-2">
-                  SCAN TO REGISTER
+                  OPENS GOOGLE REGISTRATION FORM
                 </span>
                 <h3 className="font-display font-black text-xl text-white uppercase">
                   HACKNEXT'26 SERIES 2.0
                 </h3>
-                <p className="font-mono text-xs text-gray-400 mt-1">
-                  External Participants: ₹550
+                <p className="font-mono text-xs text-gray-300 mt-1">
+                  Payment QR for ₹550 fee is provided directly inside the form!
                 </p>
               </div>
 
               <div className="relative aspect-square w-full max-w-[280px] mx-auto bg-white border-2 border-[#00E5FF] p-2 flex items-center justify-center">
                 <Image
                   src={hackathon.qrCodePath}
-                  alt="HackNext'26 Large QR"
+                  alt="HackNext'26 Large Form QR"
                   width={260}
                   height={260}
                   className="object-contain w-full h-full"

@@ -502,8 +502,8 @@ export const hackathon = {
   howItWorks: [
     {
       step: "01",
-      title: "REGISTER YOUR SQUAD",
-      desc: "Form a team of 2 to 4 members. Scan the registration QR or click the register link to secure your slots before deadline."
+      title: "SCAN QR TO OPEN FORM",
+      desc: "Scan the website QR or click the register link to open the official Google Form. The ₹550 fee payment QR is provided directly inside the form."
     },
     {
       step: "02",
@@ -535,8 +535,8 @@ export const hackathon = {
     },
     {
       id: "faq-3",
-      question: "What is the participation fee?",
-      answer: "The participation fee is ₹550 for external participants. This covers entry to the 24-hour hackathon, participation certificates, mentorship from industry experts, high-speed Wi-Fi, lab facilities, and access to all event sessions."
+      question: "What is the participation fee and how do I pay?",
+      answer: "The participation fee is ₹550 for external participants. When you scan the website QR code or click 'OPEN REGISTRATION FORM', you are directed to the official Google Form. Inside the form, you will find the official Fee Payment QR Code to complete the ₹550 payment and upload your transaction proof."
     },
     {
       id: "faq-4",
