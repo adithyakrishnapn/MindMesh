@@ -7,18 +7,22 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="relative w-full py-24 bg-white border-b-4 border-meshBlack overflow-hidden">
+    <section
+      id="how-it-works"
+      className="relative w-full py-24 bg-white border-b-4 border-meshBlack overflow-hidden"
+    >
       {/* Dots Pattern */}
       <div className="absolute inset-0 bg-dot-pattern opacity-20 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
         {/* Header */}
         <div className="mb-16">
-          <span className="badge-sticker mb-3">STEP-BY-STEP PROCESS</span>
-          <h2 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl tracking-tight text-meshBlack leading-none">
+          <span className="badge-sticker bg-[#00E5FF] text-black mb-3">
+            SPRINT WORKFLOW
+          </span>
+          <h2 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl tracking-tight text-meshBlack leading-none uppercase">
             <span>HOW IT</span> <br />
-            <span className="text-meshYellow drop-shadow-[4px_4px_0px_#111111]">
+            <span className="text-[#00E5FF] drop-shadow-[4px_4px_0px_#111111]">
               <AnimatedText text="WORKS" />
             </span>
           </h2>
@@ -36,17 +40,17 @@ export default function HowItWorks() {
               className="card-playful p-6 bg-meshOffWhite relative flex flex-col justify-between min-h-[300px] group overflow-hidden"
             >
               {/* Giant Overlapping Background Number */}
-              <div className="absolute -right-2 -top-6 font-display font-black text-8xl sm:text-9xl text-meshBlack/10 group-hover:text-meshYellow/30 transition-colors pointer-events-none select-none">
+              <div className="absolute -right-2 -top-6 font-display font-black text-8xl sm:text-9xl text-meshBlack/10 group-hover:text-[#00E5FF]/30 transition-colors pointer-events-none select-none">
                 {item.step}
               </div>
 
               {/* Top Step Badge */}
               <div className="relative z-10">
-                <span className="font-mono text-xs font-bold uppercase tracking-widest bg-meshBlack text-meshYellow px-2.5 py-1 inline-block border border-meshBlack mb-4">
+                <span className="font-mono text-xs font-bold uppercase tracking-widest bg-meshBlack text-[#00E5FF] px-2.5 py-1 inline-block border border-meshBlack mb-4">
                   STEP {item.step}
                 </span>
 
-                <h3 className="font-display font-black text-2xl text-meshBlack mt-2 leading-tight">
+                <h3 className="font-display font-black text-2xl text-meshBlack mt-2 leading-tight uppercase">
                   {item.title}
                 </h3>
               </div>
@@ -57,8 +61,8 @@ export default function HowItWorks() {
                   {item.desc}
                 </p>
 
-                <div className="mt-4 flex items-center gap-1.5 text-xs font-mono font-bold text-meshBlack group-hover:text-meshYellow group-hover:bg-meshBlack px-2 py-1 inline-block transition-all border border-meshBlack">
-                  <span>CHECKLIST READY</span> <CheckCircle2 className="w-3.5 h-3.5 inline" />
+                <div className="mt-4 flex items-center gap-1.5 text-xs font-mono font-bold text-meshBlack group-hover:text-black group-hover:bg-[#00E5FF] px-2 py-1 inline-block transition-all border border-meshBlack">
+                  <span>CHECKLIST READY</span> <CheckCircle2 className="w-3.5 h-3.5 inline text-black" />
                 </div>
               </div>
             </motion.div>
@@ -68,15 +72,12 @@ export default function HowItWorks() {
         {/* Action CTA */}
         <div className="mt-16 text-center">
           <a
-            href={hackathon.registrationUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 font-display font-black text-base uppercase bg-meshYellow text-meshBlack px-8 py-4 border-2 border-meshBlack shadow-retro hover:shadow-retroLg hover:-translate-y-1 transition-all"
+            href="#register"
+            className="inline-flex items-center gap-3 font-display font-black text-base uppercase bg-[#00E5FF] text-black px-8 py-4 border-2 border-meshBlack shadow-retro hover:shadow-retroLg hover:-translate-y-1 transition-all"
           >
-            START STEP 01 — REGISTER YOUR TEAM <ArrowRight className="w-5 h-5" />
+            START STEP 01 — REGISTER YOUR TEAM (₹550) <ArrowRight className="w-5 h-5" />
           </a>
         </div>
-
       </div>
     </section>
   );

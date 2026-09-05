@@ -45,44 +45,44 @@ export default function TermsPage() {
   };
 
   return (
-    <main className="min-h-screen bg-meshOffWhite text-meshBlack overflow-x-hidden selection:bg-meshYellow selection:text-meshBlack relative">
+    <main className="min-h-screen bg-meshOffWhite text-meshBlack overflow-x-hidden selection:bg-[#00E5FF] selection:text-meshBlack relative">
       <Navbar />
 
       {/* Hero Header Section */}
-      <section className="relative w-full pt-32 pb-16 bg-meshBlack text-white border-b-4 border-meshYellow overflow-hidden">
+      <section className="relative w-full pt-32 pb-16 bg-[#0A0E1A] text-white border-b-4 border-[#00E5FF] overflow-hidden">
         <div className="absolute inset-0 bg-dot-pattern-light opacity-10 pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
             <div>
-              <div className="inline-flex items-center gap-2 bg-meshYellow text-meshBlack font-mono font-black text-xs px-3 py-1 border border-white mb-4 uppercase tracking-widest">
+              <div className="inline-flex items-center gap-2 bg-[#00E5FF] text-black font-mono font-black text-xs px-3 py-1 border border-white mb-4 uppercase tracking-widest">
                 <ShieldCheck className="w-4 h-4" /> OFFICIAL EVENT GUIDELINES
               </div>
 
-              <h1 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl tracking-tight leading-none text-white">
+              <h1 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl tracking-tight leading-none text-white uppercase">
                 TERMS & <br />
-                <span className="text-meshYellow drop-shadow-[4px_4px_0px_#FFFFFF]">
+                <span className="text-[#00E5FF] drop-shadow-[4px_4px_0px_#FFFFFF]">
                   <AnimatedText text="CONDITIONS" />
                 </span>
               </h1>
 
-              <div className="mt-6 pt-4 border-t border-meshDarkGray">
-                <p className="font-display font-bold text-xl text-meshYellow">
+              <div className="mt-6 pt-4 border-t border-gray-800">
+                <p className="font-display font-bold text-xl text-[#FFD21F]">
                   {termsData.subtitle}
                 </p>
-                <p className="font-mono text-xs text-meshGray mt-1 uppercase tracking-wider">
-                  {termsData.organizer.department} • {termsData.organizer.college}
+                <p className="font-mono text-xs text-gray-400 mt-1 uppercase tracking-wider">
+                  {termsData.organizer.college} • {termsData.organizer.campus} • {termsData.organizer.dates}
                 </p>
               </div>
             </div>
 
             {/* Accent Badge Box */}
-            <div className="card-playful-yellow p-6 bg-meshYellow text-meshBlack max-w-sm">
+            <div className="card-playful p-6 bg-[#00E5FF] text-black max-w-sm border-2 border-white shadow-[6px_6px_0px_0px_#FFFFFF]">
               <div className="flex items-center gap-2 font-display font-black text-lg mb-2">
                 <FileText className="w-5 h-5" /> GUIDELINES NOTICE
               </div>
-              <p className="font-body text-xs font-semibold leading-relaxed">
-                Please read all event terms carefully. All registered teams must adhere to these policies during the 24-hour hackathon sprint.
+              <p className="font-body text-xs font-bold leading-relaxed">
+                External participant fee: {termsData.organizer.fee}. All registered teams must adhere to event policies throughout the 24-hour sprint.
               </p>
             </div>
           </div>
@@ -90,7 +90,7 @@ export default function TermsPage() {
       </section>
 
       {/* Mobile Horizontal Pill Scroll Navigation */}
-      <div className="lg:hidden sticky top-16 z-40 bg-meshBlack border-b-2 border-meshYellow py-3 px-4 overflow-x-auto no-scrollbar shadow-retro">
+      <div className="lg:hidden sticky top-16 z-40 bg-[#0A0E1A] border-b-2 border-[#00E5FF] py-3 px-4 overflow-x-auto no-scrollbar shadow-retro">
         <div className="flex items-center gap-2 whitespace-nowrap">
           {termsData.sections.map((sec) => {
             const isActive = activeSectionId === sec.id;
@@ -100,8 +100,8 @@ export default function TermsPage() {
                 onClick={() => scrollToSection(sec.id)}
                 className={`font-mono text-xs font-bold px-3 py-1.5 border transition-all ${
                   isActive
-                    ? "bg-meshYellow text-meshBlack border-white"
-                    : "bg-meshDarkGray text-meshGray border-meshDarkGray hover:text-white"
+                    ? "bg-[#00E5FF] text-black border-white"
+                    : "bg-gray-800 text-gray-400 border-gray-700 hover:text-white"
                 }`}
               >
                 {sec.num} {sec.title}
@@ -114,12 +114,11 @@ export default function TermsPage() {
       {/* Main Content Grid: Sticky Sidebar + Legal Sections */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          
           {/* Desktop Sticky Scroll-Spy Sidebar */}
           <aside className="hidden lg:block lg:col-span-4 sticky top-24 self-start bg-white border-2 border-meshBlack shadow-retro p-6 max-h-[calc(100vh-120px)] overflow-y-auto no-scrollbar">
             <h3 className="font-display font-black text-xs uppercase tracking-widest text-meshGray mb-4 flex items-center justify-between border-b-2 border-meshBlack pb-2">
               <span>SECTION NAVIGATION</span>
-              <span className="font-mono text-[10px] bg-meshYellow text-meshBlack px-2 py-0.5">
+              <span className="font-mono text-[10px] bg-[#00E5FF] text-black px-2 py-0.5">
                 {termsData.sections.length} CLAUSES
               </span>
             </h3>
@@ -133,14 +132,16 @@ export default function TermsPage() {
                     onClick={() => scrollToSection(sec.id)}
                     className={`w-full text-left font-mono text-xs font-bold py-2.5 px-3 border transition-all flex items-center justify-between ${
                       isActive
-                        ? "bg-meshYellow text-meshBlack border-meshBlack shadow-retro font-extrabold"
+                        ? "bg-[#00E5FF] text-meshBlack border-meshBlack shadow-retro font-extrabold"
                         : "bg-transparent text-meshBlack/80 border-transparent hover:bg-meshOffWhite hover:border-meshBlack/30"
                     }`}
                   >
                     <span className="truncate pr-2">
                       <span className="mr-2 opacity-60">{sec.num}</span> {sec.title}
                     </span>
-                    {isActive && <ChevronRight className="w-4 h-4 shrink-0 text-meshBlack stroke-[3]" />}
+                    {isActive && (
+                      <ChevronRight className="w-4 h-4 shrink-0 text-meshBlack stroke-[3]" />
+                    )}
                   </button>
                 );
               })}
@@ -157,11 +158,11 @@ export default function TermsPage() {
                   key={sec.id}
                   id={sec.id}
                   className={`card-playful p-8 bg-white transition-all duration-300 ${
-                    isActive ? "ring-4 ring-meshYellow/50 border-meshBlack" : ""
+                    isActive ? "ring-4 ring-[#00E5FF]/50 border-meshBlack" : ""
                   }`}
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="font-mono font-black text-sm bg-meshBlack text-meshYellow px-3 py-1 border border-meshBlack">
+                    <span className="font-mono font-black text-sm bg-meshBlack text-[#00E5FF] px-3 py-1 border border-meshBlack">
                       {sec.num}
                     </span>
                     <h2 className="font-display font-black text-2xl sm:text-3xl text-meshBlack uppercase">
@@ -175,7 +176,7 @@ export default function TermsPage() {
                         key={pIdx}
                         className="font-body text-base font-medium text-meshBlack/90 leading-relaxed flex items-start gap-3"
                       >
-                        <span className="w-2 h-2 rounded-full bg-meshYellow shrink-0 mt-2 border border-meshBlack" />
+                        <span className="w-2 h-2 rounded-full bg-[#00E5FF] shrink-0 mt-2 border border-meshBlack" />
                         <span>{paragraph}</span>
                       </p>
                     ))}
@@ -189,19 +190,17 @@ export default function TermsPage() {
               <AlertTriangle className="w-8 h-8 text-meshBlack shrink-0 stroke-[2.5]" />
               <div>
                 <h3 className="font-display font-black text-xl text-meshBlack uppercase mb-1">
-                  LEGAL DISCLAIMER & DRAFT NOTICE
+                  OFFICIAL EVENT POLICY
                 </h3>
                 <p className="font-body text-sm font-bold text-meshBlack leading-relaxed">
                   "{termsData.disclaimer}"
                 </p>
                 <p className="font-mono text-xs text-meshBlack/80 mt-2">
-                  Official final terms will be communicated by the SNSCE CSE Organizing Committee prior to event day.
+                  Official inquiries can be directed to the student coordinators: Gugan KM (9361278375) or Akshaya S (9894906986).
                 </p>
               </div>
             </div>
-
           </div>
-
         </div>
       </section>
 

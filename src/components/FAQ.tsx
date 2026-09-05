@@ -24,7 +24,10 @@ export default function FAQ() {
         <div className="text-center mb-16">
           <span className="badge-sticker mb-3">CLEARING YOUR DOUBTS</span>
           <h2 className="font-display font-black text-5xl sm:text-7xl tracking-tight text-meshBlack leading-none">
-            FREQUENTLY ASKED <br />
+            <span>
+              <AnimatedText text="FREQUENTLY ASKED" />
+            </span>{" "}
+            <br />
             <span className="text-meshYellow drop-shadow-[3px_3px_0px_#111111]">
               <AnimatedText text="QUESTIONS" />
             </span>

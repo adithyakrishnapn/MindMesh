@@ -7,7 +7,7 @@ export const termsList = [
   {
     id: 1,
     title: "Accurate Information",
-    text: "Participants must provide accurate and valid information during registration.",
+    text: "Participants must provide accurate and valid information during registration (including full name, phone number, and college identity).",
     highlight: "accurate and valid information",
   },
   {
@@ -19,93 +19,95 @@ export const termsList = [
   {
     id: 3,
     title: "Team Size & Composition",
-    text: "Team size must be between 1 and 4 members. Inter-college and inter-specialization teams are allowed.",
-    highlight: "1 and 4 members",
+    text: "Team size must be between 2 and 4 members. Inter-college and inter-specialization teams are enthusiastically permitted.",
+    highlight: "2 and 4 members",
   },
   {
     id: 4,
-    title: "On-the-Spot Problem Statement",
-    text: "The problem statement will be provided on the spot and teams must develop their solution within the 24-hour hackathon duration.",
-    highlight: "on the spot",
-    secondaryHighlight: "24-hour hackathon duration",
+    title: "24-Hour AI Building Duration",
+    text: "The problem statements and AI domains test real-world innovation within the 24-hour hackathon duration starting 9:00 AM on 17 September 2026.",
+    highlight: "24-hour hackathon duration",
+    secondaryHighlight: "9:00 AM on 17 September 2026",
   },
   {
     id: 5,
-    title: "Compliance with Guidelines",
-    text: "Participants must follow all instructions and guidelines provided by the organizers.",
-    highlight: "all instructions and guidelines",
+    title: "Participation Fee & Inclusions",
+    text: "External participants must complete the registration fee of ₹550 per participant covering 24-hour campus access, certificates, Wi-Fi, and lab facilities.",
+    highlight: "₹550 per participant",
   },
   {
     id: 6,
-    title: "Fair Play & Originality",
-    text: "Plagiarism, copying, cheating, or submission of previously completed projects as the primary solution may result in disqualification.",
-    highlight: "disqualification",
+    title: "Compliance with Guidelines",
+    text: "Participants must follow all instructions, security guidelines, and safety policies provided by the SNS College of Technology organizing committee.",
+    highlight: "all instructions, security guidelines",
   },
   {
     id: 7,
-    title: "Personal Belongings & Responsibility",
-    text: "Participants are responsible for their own laptops, devices, documents, and personal belongings. The organizers will not be responsible for loss or damage.",
-    highlight: "own laptops, devices, documents, and personal belongings",
+    title: "Fair Play & Originality",
+    text: "All primary solutions must be coded during the 24 hours. Plagiarism, copying, or submission of pre-built turnkey projects will result in disqualification.",
+    highlight: "disqualification",
   },
   {
     id: 8,
-    title: "Code of Conduct",
-    text: "Participants must maintain appropriate and respectful conduct throughout the event.",
-    highlight: "appropriate and respectful conduct",
+    title: "Personal Belongings & Responsibility",
+    text: "Participants are strictly responsible for their own laptops, hardware modules, devices, and personal belongings. The organizers will not be responsible for loss or damage.",
+    highlight: "own laptops, hardware modules, devices",
   },
   {
     id: 9,
-    title: "Right to Disqualify",
-    text: "The organizers reserve the right to disqualify participants/teams for violation of the rules or misconduct.",
-    highlight: "disqualify participants/teams",
+    title: "Code of Conduct",
+    text: "Participants must maintain professional, ethical, and respectful conduct throughout the entire event.",
+    highlight: "professional, ethical, and respectful conduct",
   },
   {
     id: 10,
-    title: "Finality of Decisions",
-    text: "The judges' decision will be final and binding.",
-    highlight: "judges' decision will be final and binding",
+    title: "Right to Disqualify",
+    text: "The organizers reserve the right to disqualify participants/teams for violation of event rules or behavioral misconduct.",
+    highlight: "disqualify participants/teams",
   },
   {
     id: 11,
-    title: "Media & Consent",
-    text: "By registering, participants consent to the use of event-related photographs, videos, and project details for promotional and documentation purposes.",
-    highlight: "photographs, videos, and project details",
+    title: "Finality of Decisions",
+    text: "The judges' decision regarding all awards, scores, and rankings will be final and binding.",
+    highlight: "judges' decision will be final and binding",
   },
   {
     id: 12,
-    title: "Event Modifications",
-    text: "The organizers reserve the right to make necessary changes to the event schedule, rules, or arrangements and will communicate significant changes to participants.",
-    highlight: "necessary changes to the event schedule, rules, or arrangements",
+    title: "Media & Promotional Consent",
+    text: "By registering, participants consent to the use of event-related photographs, video demos, and project highlights for documentation and media purposes.",
+    highlight: "photographs, video demos, and project highlights",
   },
   {
     id: 13,
-    title: "Capacity & Eligibility",
-    text: "Registration does not guarantee participation if the event reaches its capacity or if eligibility requirements are not met.",
-    highlight: "does not guarantee participation",
+    title: "Capacity & Rolling Admission",
+    text: "Registration slots are limited to maintain high mentorship quality. Participation is confirmed on a rolling basis.",
+    highlight: "slots are limited",
   },
 ];
 
 export default function TermsAndConditions() {
   return (
-    <section id="terms" className="relative w-full py-24 bg-meshOffWhite border-b-4 border-meshBlack overflow-hidden">
+    <section
+      id="terms"
+      className="relative w-full py-24 bg-meshOffWhite border-b-4 border-meshBlack overflow-hidden"
+    >
       {/* Background Grid */}
       <div className="absolute inset-0 bg-dot-pattern opacity-30 pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-meshYellow text-meshBlack font-mono font-black text-xs px-3.5 py-1.5 border-2 border-meshBlack shadow-retro mb-4 uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 bg-[#00E5FF] text-meshBlack font-mono font-black text-xs px-3.5 py-1.5 border-2 border-meshBlack shadow-retro mb-4 uppercase tracking-widest">
             <ShieldCheck className="w-4 h-4 text-meshBlack" /> OFFICIAL RULES & POLICIES
           </div>
-          <h2 className="font-display font-black text-5xl sm:text-7xl tracking-tight text-meshBlack leading-none">
+          <h2 className="font-display font-black text-5xl sm:text-7xl tracking-tight text-meshBlack leading-none uppercase">
             TERMS & <br />
-            <span className="text-meshYellow drop-shadow-[3px_3px_0px_#111111]">
+            <span className="text-[#00E5FF] drop-shadow-[3px_3px_0px_#111111]">
               <AnimatedText text="CONDITIONS" />
             </span>
           </h2>
           <p className="mt-4 font-body text-base sm:text-lg text-meshBlack/90 font-semibold max-w-2xl mx-auto leading-relaxed">
-            By registering for the <strong className="text-meshBlack bg-meshYellow/40 px-1">MindMesh 24-Hours Hackathon</strong>, participants agree to the following rules and guidelines:
+            By registering for <strong className="text-meshBlack bg-[#00E5FF]/40 px-1">HACKNEXT'26 SERIES 2.0</strong>, all participants agree to adhere to the following event policies:
           </p>
         </div>
 
@@ -114,11 +116,11 @@ export default function TermsAndConditions() {
           {termsList.map((item) => (
             <div
               key={item.id}
-              className="card-playful bg-white p-6 flex flex-col justify-between hover:bg-meshYellow/5 transition-all duration-200"
+              className="card-playful bg-white p-6 flex flex-col justify-between hover:bg-[#00E5FF]/5 transition-all duration-200"
             >
               <div>
                 <div className="flex items-center justify-between gap-4 mb-3">
-                  <span className="font-mono font-black text-sm bg-meshBlack text-meshYellow px-3 py-1 border border-meshBlack shadow-retro">
+                  <span className="font-mono font-black text-sm bg-meshBlack text-[#00E5FF] px-3 py-1 border border-meshBlack shadow-retro">
                     #{item.id.toString().padStart(2, "0")}
                   </span>
                   <span className="font-display font-bold text-xs uppercase tracking-wider text-meshGray bg-meshOffWhite px-2.5 py-1 border border-meshBlack/20">
@@ -134,9 +136,9 @@ export default function TermsAndConditions() {
         </div>
 
         {/* Confirmation Agreement Footer Box */}
-        <div className="p-8 bg-meshYellow border-4 border-meshBlack shadow-retroLg flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="p-8 bg-[#00E5FF] border-4 border-meshBlack shadow-retroLg flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-start gap-4">
-            <div className="w-12 h-12 rounded-none bg-meshBlack text-meshYellow border-2 border-meshBlack flex items-center justify-center shrink-0 shadow-retro">
+            <div className="w-12 h-12 rounded-none bg-meshBlack text-[#00E5FF] border-2 border-meshBlack flex items-center justify-center shrink-0 shadow-retro">
               <FileCheck className="w-6 h-6 stroke-[2.5]" />
             </div>
             <div>
@@ -144,30 +146,25 @@ export default function TermsAndConditions() {
                 CONFIRMATION & AGREEMENT
               </h3>
               <p className="font-body text-sm font-extrabold text-meshBlack leading-relaxed">
-                By submitting this form, I confirm that I have read, understood, and agree to the above Terms & Conditions.
+                By scanning the registration QR or submitting the official entry form, I confirm that I have read, understood, and agree to the HACKNEXT'26 Series 2.0 Terms & Conditions.
               </p>
             </div>
           </div>
           <div className="shrink-0">
-            <div className="inline-flex items-center gap-2 bg-meshBlack text-meshYellow font-mono font-bold text-xs px-4 py-2.5 border-2 border-meshBlack shadow-retro uppercase">
-              <CheckCircle2 className="w-4 h-4 text-meshYellow" /> BINDING AGREEMENT
+            <div className="inline-flex items-center gap-2 bg-meshBlack text-[#00E5FF] font-mono font-bold text-xs px-4 py-2.5 border-2 border-meshBlack shadow-retro uppercase">
+              <CheckCircle2 className="w-4 h-4 text-[#00E5FF]" /> BINDING AGREEMENT
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );
 }
 
-// Helper to highlight key text segments as specified in prompt
 function renderFormattedText(text: string, highlight?: string, secondaryHighlight?: string) {
   if (!highlight) return text;
 
-  let parts: Array<{ text: string; isBold: boolean }> = [];
-  
   if (secondaryHighlight && text.includes(secondaryHighlight)) {
-    // Handle both highlights if present
     const firstIdx = text.indexOf(highlight);
     const secondIdx = text.indexOf(secondaryHighlight);
 
@@ -180,9 +177,9 @@ function renderFormattedText(text: string, highlight?: string, secondaryHighligh
       return (
         <>
           {p1}
-          <strong className="font-extrabold text-meshBlack bg-meshYellow/30 px-0.5">{h1}</strong>
+          <strong className="font-extrabold text-meshBlack bg-[#00E5FF]/30 px-0.5">{h1}</strong>
           {p2}
-          <strong className="font-extrabold text-meshBlack bg-meshYellow/30 px-0.5">{h2}</strong>
+          <strong className="font-extrabold text-meshBlack bg-[#00E5FF]/30 px-0.5">{h2}</strong>
           {p3}
         </>
       );
@@ -195,7 +192,7 @@ function renderFormattedText(text: string, highlight?: string, secondaryHighligh
   return (
     <>
       {partsArray[0]}
-      <strong className="font-extrabold text-meshBlack bg-meshYellow/30 px-0.5">{highlight}</strong>
+      <strong className="font-extrabold text-meshBlack bg-[#00E5FF]/30 px-0.5">{highlight}</strong>
       {partsArray[1]}
     </>
   );

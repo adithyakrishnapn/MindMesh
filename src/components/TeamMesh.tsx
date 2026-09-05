@@ -4,62 +4,64 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { hackathon } from "@/data/hackathon";
 import AnimatedText from "@/components/ui/AnimatedText";
-import { Code2, Palette, Lightbulb, Wrench, Search, Sparkles } from "lucide-react";
+import { Brain, Code2, Palette, Lightbulb, Sparkles } from "lucide-react";
 
 const roleIcons: Record<string, any> = {
+  ai: Brain,
   dev: Code2,
   des: Palette,
-  ide: Lightbulb,
-  bld: Wrench,
-  res: Search,
+  str: Lightbulb,
 };
 
 export default function TeamMesh() {
-  const [hoveredRoleId, setHoveredRoleId] = useState<string>("dev");
+  const [hoveredRoleId, setHoveredRoleId] = useState<string>("ai");
 
-  const activeRole = hackathon.teamRoles.find((r) => r.id === hoveredRoleId) || hackathon.teamRoles[0];
+  const activeRole =
+    hackathon.teamRoles.find((r) => r.id === hoveredRoleId) ||
+    hackathon.teamRoles[0];
 
   return (
-    <section id="team" className="relative w-full py-24 bg-meshOffWhite border-b-4 border-meshBlack overflow-hidden">
+    <section
+      id="team"
+      className="relative w-full py-24 bg-meshOffWhite border-b-4 border-meshBlack overflow-hidden"
+    >
       {/* Background Grid */}
       <div className="absolute inset-0 bg-dot-pattern opacity-30 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
         {/* Section Header */}
         <div className="mb-16 flex flex-col lg:flex-row lg:items-end justify-between gap-6">
           <div>
-            <span className="badge-sticker mb-3">COLLABORATION ENGINE</span>
-            <h2 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl tracking-tight text-meshBlack leading-none">
-              <span>YOUR TEAM IS</span> <br />
-              <span className="text-meshYellow drop-shadow-[4px_4px_0px_#111111]">
-                <AnimatedText text="YOUR MESH." />
+            <span className="badge-sticker bg-[#00E5FF] text-black mb-3">
+              TEAM COMPOSITION
+            </span>
+            <h2 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl tracking-tight text-meshBlack leading-none uppercase">
+              <span>ASSEMBLE</span> <br />
+              <span className="text-[#00E5FF] drop-shadow-[4px_4px_0px_#111111]">
+                <AnimatedText text="YOUR SQUAD" />
               </span>
             </h2>
           </div>
           <p className="font-mono text-xs font-bold text-meshGray uppercase tracking-widest max-w-sm">
-            HOVER OVER EACH ROLE NODE TO SEE HOW COMPLEMENTARY SKILLS INTERLOCK
+            HOVER OVER EACH ROLE NODE TO EXPLORE COMPLEMENTARY SQUAD CAPABILITIES (2-4 MEMBERS)
           </p>
         </div>
 
         {/* Interactive Roles Mesh Display Container */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          
           {/* Left Column: Interactive Floating Role Nodes */}
           <div className="lg:col-span-7 card-playful p-8 bg-white relative min-h-[420px] flex flex-col justify-center">
-            
             <span className="font-mono text-xs font-bold text-meshGray uppercase tracking-widest mb-6 block">
               HOVER A NODE TO ACTIVATE CONNECTIONS
             </span>
 
             {/* Circular Role Nodes Container */}
             <div className="relative w-full h-[300px] flex items-center justify-center">
-              
               {/* Central Core Connection Badge */}
-              <div className="absolute w-24 h-24 rounded-full bg-meshYellow border-2 border-meshBlack flex flex-col items-center justify-center text-center shadow-retro z-10 animate-pulse-slow">
+              <div className="absolute w-24 h-24 rounded-full bg-[#00E5FF] border-2 border-meshBlack flex flex-col items-center justify-center text-center shadow-retro z-10 animate-pulse-slow">
                 <Sparkles className="w-6 h-6 text-meshBlack" />
                 <span className="font-display font-black text-[10px] uppercase tracking-wider text-meshBlack">
-                  CORE MESH
+                  AI SQUAD
                 </span>
               </div>
 
@@ -76,7 +78,6 @@ export default function TeamMesh() {
 
                 return (
                   <div key={role.id} className="absolute">
-                    
                     {/* Connection Line to Core */}
                     <svg
                       className="absolute overflow-visible pointer-events-none"
@@ -92,7 +93,7 @@ export default function TeamMesh() {
                         y1={y < 0 ? Math.abs(y) : 0}
                         x2={x < 0 ? 0 : x}
                         y2={y < 0 ? 0 : y}
-                        stroke={isSelected ? "#111111" : "#FFD21F"}
+                        stroke={isSelected ? "#111111" : "#00E5FF"}
                         strokeWidth={isSelected ? "3" : "2"}
                         strokeDasharray={isSelected ? "none" : "4 4"}
                       />
@@ -109,21 +110,19 @@ export default function TeamMesh() {
                       transition={{ type: "spring", stiffness: 350, damping: 20 }}
                       className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-meshBlack flex flex-col items-center justify-center shadow-retro transition-colors ${
                         isSelected
-                          ? "bg-meshYellow text-meshBlack z-30 ring-4 ring-meshBlack/10"
-                          : "bg-white text-meshBlack hover:bg-meshYellow/40 z-20"
+                          ? "bg-[#00E5FF] text-meshBlack z-30 ring-4 ring-meshBlack/10"
+                          : "bg-white text-meshBlack hover:bg-[#00E5FF]/30 z-20"
                       }`}
                     >
                       <IconComponent className="w-6 h-6 sm:w-7 sm:h-7" />
-                      <span className="font-display font-black text-[9px] sm:text-[10px] uppercase tracking-tighter mt-0.5">
+                      <span className="font-display font-black text-[8px] sm:text-[9px] uppercase tracking-tighter mt-0.5">
                         {role.title.split(" ")[0]}
                       </span>
                     </motion.button>
-
                   </div>
                 );
               })}
             </div>
-
           </div>
 
           {/* Right Column: Dynamic Role Explanation Card */}
@@ -133,10 +132,10 @@ export default function TeamMesh() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3 }}
-              className="card-playful-yellow p-8 relative"
+              className="card-playful p-8 bg-[#00E5FF] text-meshBlack relative border-4 border-meshBlack"
             >
               <div className="flex items-center gap-2 mb-2">
-                <span className="font-mono text-xs font-bold uppercase bg-meshBlack text-meshYellow px-2.5 py-0.5">
+                <span className="font-mono text-xs font-bold uppercase bg-meshBlack text-[#00E5FF] px-2.5 py-0.5">
                   SELECTED ROLE
                 </span>
                 <span className="font-mono text-xs font-bold text-meshBlack">
@@ -144,7 +143,7 @@ export default function TeamMesh() {
                 </span>
               </div>
 
-              <h3 className="font-display font-black text-3xl sm:text-4xl text-meshBlack my-3">
+              <h3 className="font-display font-black text-3xl sm:text-4xl text-meshBlack my-3 uppercase">
                 {activeRole.title}
               </h3>
 
@@ -154,7 +153,7 @@ export default function TeamMesh() {
 
               <div className="mt-6 pt-4 border-t-2 border-meshBlack/40 flex items-center justify-between">
                 <span className="font-handwriting text-base font-bold text-meshBlack">
-                  "Every role makes the mesh stronger."
+                  "Code • Create • Conquer • Transform"
                 </span>
                 <span className="font-mono text-xs font-bold bg-white text-meshBlack px-2 py-1 border border-meshBlack">
                   TEAM SIZE: 2-4
@@ -162,9 +161,7 @@ export default function TeamMesh() {
               </div>
             </motion.div>
           </div>
-
         </div>
-
       </div>
     </section>
   );

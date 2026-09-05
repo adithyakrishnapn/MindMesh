@@ -4,178 +4,201 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import AnimatedText from "@/components/ui/AnimatedText";
 import { hackathon } from "@/data/hackathon";
-import { ArrowRight, Lightbulb, Users, Trophy } from "lucide-react";
+import {
+  Brain,
+  Users,
+  Lightbulb,
+  Rocket,
+  ArrowRight,
+  Sparkles,
+  Building2,
+  CheckCircle2,
+} from "lucide-react";
 
 export default function About() {
-  const [activeStep, setActiveStep] = useState<number>(1);
+  const [activePillarIndex, setActivePillarIndex] = useState<number>(0);
 
-  const connectionSteps = [
-    {
-      id: 1,
-      title: "INDIVIDUAL IDEAS",
-      desc: "Isolated sparks of creativity, raw concepts, and unique skill sets waiting to find their missing piece.",
-      icon: Lightbulb,
-    },
-    {
-      id: 2,
-      title: "CONNECTED MINDS",
-      desc: "Developers, designers, and domain thinkers converge in a 24-hour high-octane sprint.",
-      icon: Users,
-    },
-    {
-      id: 3,
-      title: "ONE SOLUTION",
-      desc: "Collaborative execution transforms abstract thoughts into tested, deployable products.",
-      icon: Trophy,
-    },
-  ];
+  const pillarIcons = [Brain, Users, Lightbulb, Rocket];
+  const currentPillar = hackathon.pillars[activePillarIndex];
+  const IconComponent = pillarIcons[activePillarIndex] || Brain;
 
   return (
-    <section id="about" className="relative w-full py-24 bg-white border-b-4 border-meshBlack overflow-hidden">
+    <section
+      id="about"
+      className="relative w-full py-24 bg-white border-b-4 border-meshBlack overflow-hidden"
+    >
       {/* Background Accent Grid */}
       <div className="absolute inset-0 bg-dot-pattern opacity-20 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Playful Top Annotation */}
-        <div className="flex items-center gap-3 mb-6">
-          <span className="badge-sticker">THE CONCEPT</span>
+        <div className="flex flex-wrap items-center gap-3 mb-6">
+          <span className="badge-sticker bg-[#00E5FF] text-black">THE MANIFESTO</span>
           <span className="font-handwriting text-lg font-bold text-meshBlack">
-            "Different minds connect to create something bigger."
+            "Innovate Today. Transform Tomorrow."
           </span>
         </div>
 
         {/* Section Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          {/* Left Column: Massive Heading */}
+          {/* Left Column: Heading & Institutional Mission */}
           <div className="lg:col-span-6">
-            <h2 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl tracking-tight leading-[0.9] text-meshBlack">
-              <span className="block">WHAT</span>
-              <span className="block text-meshYellow drop-shadow-[3px_3px_0px_#111111]">IS</span>
-              <AnimatedText text="MINDMESH?" className="block text-meshBlack" />
+            <h2 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl tracking-tight leading-[0.9] text-meshBlack uppercase">
+              <span className="block">
+                <AnimatedText text="WHAT IS" />
+              </span>
+              <span className="block text-[#00E5FF] drop-shadow-[3px_3px_0px_#111111]">
+                <AnimatedText text="HACKNEXT" />
+              </span>
+              <span className="block text-meshBlack">
+                <AnimatedText text="'26?" />
+              </span>
             </h2>
 
-            <div className="mt-8 p-6 bg-meshOffWhite border-2 border-meshBlack shadow-retro">
-              <p className="font-body text-lg sm:text-xl font-semibold text-meshBlack leading-relaxed">
-                MindMesh is a 24-hour innovation challenge conducted by the{" "}
-                <span className="bg-meshYellow px-1.5 py-0.5 border border-meshBlack">
-                  {hackathon.organizer.department}
+            <div className="mt-8 p-6 bg-meshOffWhite border-2 border-meshBlack shadow-retro space-y-4">
+              <p className="font-body text-lg sm:text-xl font-bold text-meshBlack leading-relaxed">
+                <span className="bg-[#00E5FF] px-2 py-0.5 border border-meshBlack">
+                  HACKNEXT'26 SERIES 2.0
                 </span>{" "}
-                at {hackathon.organizer.college}, Coimbatore.
+                is an elite AI-Powered 24-Hour Hackathon held at{" "}
+                <strong>{hackathon.organizer.college}</strong> ({hackathon.campusName}), Coimbatore.
               </p>
-              <p className="mt-4 font-body text-base text-meshGray leading-relaxed">
-                It's an experimental playground where student developers, designers, and problem solvers connect to turn bold ideas into working software and hardware prototypes under tight deadlines.
+
+              <p className="font-body text-sm text-meshGray font-medium leading-relaxed">
+                Powered by the renowned <strong>SNS Design Thinking Framework</strong>, this hackathon pushes students beyond basic prototypes to build scalable, market-viable AI solutions that create tangible real-world impact.
               </p>
+
+              {/* Design Thinking Accolade Tag */}
+              <div className="pt-3 border-t border-meshBlack/20 flex items-center gap-3">
+                <span className="w-3 h-3 rounded-full bg-meshYellow shrink-0" />
+                <span className="font-mono text-xs font-bold text-meshBlack">
+                  {hackathon.organizer.frameworkTag}
+                </span>
+              </div>
+            </div>
+
+            {/* Badges strip from Poster */}
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="p-3 bg-white border-2 border-meshBlack shadow-retro flex items-center gap-2">
+                <Sparkles className="w-5 h-5 text-[#00E5FF] shrink-0" />
+                <span className="font-mono text-xs font-bold text-meshBlack">
+                  1000 I-Startups in 10 Years
+                </span>
+              </div>
+
+              <div className="p-3 bg-meshYellow/30 border-2 border-meshBlack shadow-retro flex items-center gap-2">
+                <Building2 className="w-5 h-5 text-meshBlack shrink-0" />
+                <span className="font-mono text-xs font-bold text-meshBlack">
+                  Pathway to 10 LPA & Beyond
+                </span>
+              </div>
             </div>
           </div>
 
-          {/* Right Column: Node Connection Story Visualizer */}
+          {/* Right Column: The 4 Core Pillars from the Poster */}
           <div className="lg:col-span-6 flex flex-col gap-6">
-            
-            <div className="card-playful p-8 bg-meshOffWhite relative">
-              <h3 className="font-display font-bold text-xs uppercase tracking-widest text-meshGray mb-6 flex items-center justify-between">
-                <span>VISUAL STORYLINE</span>
-                <span className="bg-meshYellow text-meshBlack px-2 py-0.5 border border-meshBlack text-[10px]">
-                  INTERACTIVE MESH
+            <div className="card-playful p-6 sm:p-8 bg-[#0A0E1A] text-white border-4 border-meshBlack shadow-retroLg relative">
+              
+              <div className="flex items-center justify-between mb-6 border-b border-gray-700 pb-3">
+                <span className="font-mono text-xs font-bold text-[#00E5FF] uppercase tracking-widest">
+                  THE 4 CORE PILLARS
                 </span>
-              </h3>
+                <span className="font-mono text-xs font-black bg-meshYellow text-black px-2 py-0.5 border border-black">
+                  POSTER BLUEPRINT
+                </span>
+              </div>
 
-              {/* Node Connection Graphic */}
-              <div className="relative my-8 py-6 flex items-center justify-between border-y-2 border-dashed border-meshBlack">
-                
-                {/* Connecting Wire */}
-                <div className="absolute left-6 right-6 top-1/2 -translate-y-1/2 h-1 bg-meshBlack z-0" />
-                
-                {/* Active Progress Highlight Wire */}
-                <motion.div
-                  className="absolute left-6 top-1/2 -translate-y-1/2 h-2 bg-meshYellow z-0"
-                  animate={{
-                    width: activeStep === 1 ? "0%" : activeStep === 2 ? "50%" : "90%",
-                  }}
-                  transition={{ type: "spring", stiffness: 200, damping: 20 }}
-                />
-
-                {connectionSteps.map((step) => {
-                  const Icon = step.icon;
-                  const isActive = activeStep >= step.id;
-                  const isCurrent = activeStep === step.id;
+              {/* Pillars Interactive Stepper Tabs */}
+              <div className="grid grid-cols-4 gap-2 mb-6">
+                {hackathon.pillars.map((pillar, idx) => {
+                  const isActive = activePillarIndex === idx;
 
                   return (
                     <button
-                      key={step.id}
-                      onClick={() => setActiveStep(step.id)}
-                      className={`relative z-10 w-12 h-12 sm:w-16 sm:h-16 rounded-full border-2 border-meshBlack flex items-center justify-center font-display font-black text-lg transition-all duration-300 ${
-                        isCurrent
-                          ? "bg-meshYellow scale-110 shadow-retro"
-                          : isActive
-                          ? "bg-meshBlack text-meshWhite"
-                          : "bg-white text-meshBlack"
+                      key={pillar.id}
+                      onClick={() => setActivePillarIndex(idx)}
+                      className={`py-2 px-1 text-center font-display font-black text-xs sm:text-sm uppercase tracking-wider border-2 transition-all ${
+                        isActive
+                          ? "bg-[#00E5FF] text-black border-white shadow-[3px_3px_0px_0px_#FFD21F] scale-105"
+                          : "bg-gray-800 text-gray-300 border-gray-700 hover:bg-gray-700"
                       }`}
                     >
-                      <Icon className={`w-5 h-5 sm:w-7 sm:h-7 ${isCurrent ? "text-meshBlack animate-bounce" : isActive ? "text-meshYellow" : "text-meshBlack"}`} />
+                      {pillar.title}
                     </button>
                   );
                 })}
               </div>
 
-              {/* Dynamic Description Box */}
+              {/* Active Pillar Card */}
               <motion.div
-                key={activeStep}
-                initial={{ opacity: 0, y: 10 }}
+                key={currentPillar.id}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
-                className="bg-white p-5 border-2 border-meshBlack shadow-retro"
+                className="bg-[#111827] p-6 border-2 border-[#00E5FF] relative shadow-[6px_6px_0px_0px_#FFD21F]"
               >
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="font-mono text-xs font-bold text-meshYellow bg-meshBlack px-2 py-0.5">
-                    STAGE 0{activeStep}
-                  </span>
-                  <h4 className="font-display font-extrabold text-xl text-meshBlack">
-                    {connectionSteps[activeStep - 1].title}
-                  </h4>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-14 h-14 bg-[#00E5FF] text-black border-2 border-black flex items-center justify-center font-black shadow-retro shrink-0">
+                    <IconComponent className="w-8 h-8" />
+                  </div>
+
+                  <div>
+                    <span className="font-mono text-xs font-black text-[#FFD21F] uppercase tracking-wider">
+                      PILLAR 0{activePillarIndex + 1}
+                    </span>
+                    <h3 className="font-display font-black text-2xl sm:text-3xl text-white uppercase leading-none mt-0.5">
+                      {currentPillar.title}
+                    </h3>
+                  </div>
                 </div>
-                <p className="font-body text-sm text-meshBlack/90 font-medium">
-                  {connectionSteps[activeStep - 1].desc}
+
+                {/* Sub Action & Action from Poster */}
+                <div className="my-4 p-3 bg-black/50 border border-[#00E5FF]/40">
+                  <div className="font-mono text-xs font-black text-[#00E5FF] tracking-wider uppercase">
+                    {currentPillar.action}
+                  </div>
+                  <div className="font-display font-black text-lg text-[#FFD21F] tracking-wide uppercase mt-0.5">
+                    {currentPillar.subAction}
+                  </div>
+                </div>
+
+                <p className="font-body text-sm font-medium text-gray-300 leading-relaxed">
+                  {currentPillar.desc}
                 </p>
+
+                {/* Next Tab Button */}
+                <div className="mt-6 pt-4 border-t border-gray-700 flex items-center justify-between">
+                  <span className="font-mono text-[11px] text-gray-400">
+                    TAP TABS OR CLICK NEXT
+                  </span>
+                  <button
+                    onClick={() => setActivePillarIndex((prev) => (prev + 1) % hackathon.pillars.length)}
+                    className="font-display font-bold text-xs uppercase bg-[#FFD21F] text-black px-3 py-1.5 border border-black flex items-center gap-1 hover:bg-[#00E5FF] transition-colors"
+                  >
+                    NEXT PILLAR <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
               </motion.div>
 
-              {/* Step Selector Buttons */}
-              <div className="mt-6 flex items-center justify-between">
-                <span className="font-mono text-xs font-bold text-meshGray">
-                  CLICK NODES TO REVEAL TRANSFORMATION
-                </span>
-                <button
-                  onClick={() => setActiveStep((prev) => (prev % 3) + 1)}
-                  className="font-display font-bold text-xs uppercase bg-meshYellow px-3 py-1.5 border border-meshBlack flex items-center gap-1 hover:bg-meshBlack hover:text-meshWhite transition-colors"
-                >
-                  NEXT <ArrowRight className="w-3.5 h-3.5" />
-                </button>
-              </div>
             </div>
-
           </div>
         </div>
 
-        {/* Playful Animated SVG Line Divider */}
+        {/* Bottom Banner Divider */}
         <div className="mt-16 pt-8 border-t-2 border-meshBlack/10 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <svg width="120" height="24" viewBox="0 0 120 24" fill="none" className="text-meshBlack">
-              <path
-                d="M2 12C20 4 40 20 60 12C80 4 100 20 118 12"
-                stroke="currentColor"
-                strokeWidth="3"
-                strokeLinecap="round"
-                className="animate-dash-line"
-              />
-            </svg>
-            <span className="font-handwriting text-base font-bold text-meshBlack">
-              KEEP SCROLLING → EXPLORE METRICS & TRACKS
+            <span className="badge-sticker bg-[#FFD21F] text-black">
+              SNS AI CAMPUS
+            </span>
+            <span className="font-mono text-xs font-bold text-meshBlack uppercase tracking-wider">
+              {hackathon.durationTag}
             </span>
           </div>
-          
+
           <span className="font-mono text-xs font-bold text-meshGray uppercase tracking-widest">
-            SNSCE CSE • 2026 EDITION
+            {hackathon.name} • {hackathon.edition} • 2026
           </span>
         </div>
 

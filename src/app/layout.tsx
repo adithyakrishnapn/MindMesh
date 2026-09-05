@@ -5,17 +5,20 @@ import CustomCursor from "@/components/ui/CustomCursor";
 import GrainTexture from "@/components/ui/GrainTexture";
 
 export const metadata: Metadata = {
-  title: "MINDMESH 2026 — 24-Hour Hackathon | SNSCE CSE Coimbatore",
+  title: "HACKNEXT'26 SERIES 2.0 — AI-Powered 24-Hour Hackathon | SNS College of Technology",
   description:
-    "MindMesh is a 24-hour college innovation hackathon conducted by the Department of Computer Science and Engineering, SNS College of Engineering (SNSCE), Coimbatore.",
+    "HACKNEXT'26 Series 2.0 is an elite AI-Powered 24-Hour Hackathon held on 17-18 September 2026 at SNS AI Campus, SNS College of Technology (Autonomous), Coimbatore. External participants fee: ₹550.",
   keywords: [
-    "MindMesh",
-    "SNSCE",
-    "Hackathon",
+    "HACKNEXT'26",
+    "Series 2.0",
+    "AI-Powered Hackathon",
     "24 Hour Hackathon",
+    "SNS College of Technology",
+    "SNSCT",
+    "SNS AI Campus",
     "Coimbatore Hackathon",
-    "SNS College of Engineering",
-    "CSE Department",
+    "Design Thinking Framework",
+    "SNS Institutions",
   ],
 };
 
@@ -26,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="antialiased selection:bg-meshYellow selection:text-meshBlack">
+      <body className="antialiased selection:bg-[#00E5FF] selection:text-black">
         <SmoothScroll>
           <GrainTexture />
           <CustomCursor />

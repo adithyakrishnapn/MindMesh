@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { hackathon } from "@/data/hackathon";
 import MagneticButton from "@/components/ui/MagneticButton";
-import { ArrowUpRight, Menu, X, ArrowLeft, FileText } from "lucide-react";
+import { ArrowUpRight, Menu, X, ArrowLeft, FileText, QrCode } from "lucide-react";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -18,12 +18,12 @@ export default function Navbar() {
   // Nav items configuration
   const navLinks = [
     { name: "ABOUT", href: "#about", id: "about" },
-    { name: "STATS", href: "#stats", id: "stats" },
-    { name: "CHALLENGE", href: "#challenge", id: "challenge" },
-    { name: "TIMELINE", href: "#timeline", id: "timeline" },
-    { name: "HOW IT WORKS", href: "#how-it-works", id: "how-it-works" },
-    { name: "TEAM MESH", href: "#team", id: "team" },
+    { name: "EXPECT", href: "#expect", id: "expect" },
+    { name: "DOMAINS", href: "#challenge", id: "challenge" },
+    { name: "SCHEDULE", href: "#timeline", id: "timeline" },
     { name: "PRIZES", href: "#prizes", id: "prizes" },
+    { name: "REGISTER & QR", href: "#register", id: "register" },
+    { name: "CONTACT", href: "#coordinators", id: "coordinators" },
     { name: "TERMS", href: "#terms", id: "terms" },
   ];
 
@@ -31,9 +31,11 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 40);
-      
-      // Bottom of page fallback for terms section
-      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 250) {
+
+      if (
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 250
+      ) {
         setActiveSection("terms");
       }
     };
@@ -70,8 +72,11 @@ export default function Navbar() {
   }, [isTermsPage]);
 
   // Smooth scroll handler with offset for sticky navbar height
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (isTermsPage) return; // Allow normal link navigation from /terms
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    if (isTermsPage) return;
     e.preventDefault();
     const targetId = href.replace("#", "");
     setActiveSection(targetId);
@@ -89,30 +94,34 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled || isTermsPage
-          ? "bg-white/90 backdrop-blur-md border-b-2 border-meshBlack py-3 shadow-sm"
+          ? "bg-white/95 backdrop-blur-md border-b-2 border-meshBlack py-3 shadow-sm"
           : "bg-transparent py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        
         {/* Brand Logo / Text */}
         <Link href="/" className="group flex items-center gap-2">
-          <div className="w-8 h-8 bg-meshYellow border-2 border-meshBlack flex items-center justify-center font-display font-black text-meshBlack text-lg shadow-retro group-hover:rotate-6 transition-transform">
-            M
+          <div className="w-8 h-8 bg-[#00E5FF] border-2 border-meshBlack flex items-center justify-center font-display font-black text-black text-sm shadow-retro group-hover:rotate-6 transition-transform">
+            AI
           </div>
           <div className="flex flex-col">
-            <span className="font-display font-black text-xl tracking-tight text-meshBlack leading-none">
-              {hackathon.name}
-            </span>
-            <span className="font-mono text-[10px] font-bold text-meshGray tracking-widest leading-none mt-0.5">
-              SNSCE CSE
+            <div className="flex items-center gap-1.5">
+              <span className="font-display font-black text-xl tracking-tight text-meshBlack leading-none">
+                {hackathon.name}
+              </span>
+              <span className="text-[9px] font-mono font-black bg-[#FFD21F] text-black px-1.5 py-0.5 border border-black leading-none">
+                {hackathon.edition}
+              </span>
+            </div>
+            <span className="font-mono text-[9px] font-bold text-meshGray tracking-widest leading-none mt-1 uppercase">
+              SNS COLLEGE OF TECHNOLOGY
             </span>
           </div>
         </Link>
 
         {/* Desktop Navigation Links */}
         {!isTermsPage ? (
-          <nav className="hidden xl:flex items-center gap-2">
+          <nav className="hidden xl:flex items-center gap-1.5">
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
 
@@ -123,7 +132,7 @@ export default function Navbar() {
                   onClick={(e) => handleNavClick(e, link.href)}
                   className={`font-display font-extrabold text-[11px] tracking-wider uppercase px-2.5 py-1.5 transition-all border ${
                     isActive
-                      ? "bg-meshYellow text-meshBlack border-meshBlack shadow-retro scale-105"
+                      ? "bg-[#00E5FF] text-meshBlack border-meshBlack shadow-retro scale-105"
                       : "text-meshBlack hover:bg-meshBlack hover:text-white border-transparent"
                   }`}
                 >
@@ -138,10 +147,10 @@ export default function Navbar() {
               href="/"
               className="inline-flex items-center gap-2 font-display font-bold text-xs uppercase bg-white text-meshBlack px-4 py-2 border-2 border-meshBlack shadow-retro hover:bg-meshYellow transition-colors"
             >
-              <ArrowLeft className="w-4 h-4" /> BACK TO MINDMESH
+              <ArrowLeft className="w-4 h-4" /> BACK TO HACKNEXT'26
             </Link>
 
-            <span className="badge-sticker bg-meshYellow text-meshBlack border-meshBlack text-xs">
+            <span className="badge-sticker bg-[#00E5FF] text-meshBlack border-meshBlack text-xs">
               TERMS & CONDITIONS
             </span>
           </div>
@@ -150,21 +159,19 @@ export default function Navbar() {
         {/* Right Action Buttons */}
         <div className="hidden sm:flex items-center gap-3">
           {!isTermsPage && (
-            <Link
-              href="/terms"
-              className="font-mono text-xs font-bold uppercase text-meshBlack hover:text-meshYellow hover:bg-meshBlack px-2.5 py-1.5 border border-meshBlack/30 transition-all flex items-center gap-1"
+            <a
+              href="#register"
+              className="font-mono text-xs font-bold uppercase text-meshBlack hover:text-white hover:bg-meshBlack px-2.5 py-1.5 border border-meshBlack/30 transition-all flex items-center gap-1"
             >
-              <FileText className="w-3.5 h-3.5" /> TERMS
-            </Link>
+              <QrCode className="w-3.5 h-3.5" /> SCAN QR
+            </a>
           )}
 
           <MagneticButton
-            href={hackathon.registrationUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs px-4 py-2.5"
+            href="#register"
+            className="text-xs px-4 py-2.5 bg-meshBlack text-[#00E5FF] hover:bg-[#00E5FF] hover:text-black"
           >
-            REGISTER NOW <ArrowUpRight className="w-4 h-4" />
+            REGISTER NOW (₹550) <ArrowUpRight className="w-4 h-4" />
           </MagneticButton>
         </div>
 
@@ -172,17 +179,21 @@ export default function Navbar() {
         <div className="flex xl:hidden items-center gap-2">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2 bg-meshYellow border-2 border-meshBlack shadow-retro focus:outline-none"
+            className="p-2 bg-[#00E5FF] border-2 border-meshBlack shadow-retro focus:outline-none"
             aria-label="Toggle Navigation Menu"
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6 text-meshBlack" /> : <Menu className="w-6 h-6 text-meshBlack" />}
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6 text-meshBlack" />
+            ) : (
+              <Menu className="w-6 h-6 text-meshBlack" />
+            )}
           </button>
         </div>
       </div>
 
       {/* Mobile Drawer Navigation */}
       {isMobileMenuOpen && (
-        <div className="xl:hidden bg-meshYellow border-b-4 border-meshBlack px-4 pt-4 pb-6 mt-3 flex flex-col gap-2 shadow-retroLg animate-in slide-in-from-top-2 duration-200">
+        <div className="xl:hidden bg-meshOffWhite border-b-4 border-meshBlack px-4 pt-4 pb-6 mt-3 flex flex-col gap-2 shadow-retroLg animate-in slide-in-from-top-2 duration-200">
           {!isTermsPage ? (
             <>
               {navLinks.map((link) => {
@@ -195,7 +206,7 @@ export default function Navbar() {
                     onClick={(e) => handleNavClick(e, link.href)}
                     className={`font-display font-black text-sm tracking-wider uppercase py-2 px-3 border transition-all ${
                       isActive
-                        ? "bg-meshBlack text-meshYellow border-meshBlack shadow-retro"
+                        ? "bg-[#00E5FF] text-meshBlack border-meshBlack shadow-retro"
                         : "text-meshBlack border-transparent hover:pl-4"
                     }`}
                   >
@@ -215,20 +226,19 @@ export default function Navbar() {
             <Link
               href="/"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="font-display font-black text-sm uppercase bg-meshBlack text-meshYellow p-3 border-2 border-meshBlack shadow-retro flex items-center justify-center gap-2"
+              className="font-display font-black text-sm uppercase bg-meshBlack text-[#00E5FF] p-3 border-2 border-meshBlack shadow-retro flex items-center justify-center gap-2"
             >
-              <ArrowLeft className="w-4 h-4" /> BACK TO MINDMESH HOMEPAGE
+              <ArrowLeft className="w-4 h-4" /> BACK TO HACKNEXT'26 HOMEPAGE
             </Link>
           )}
 
           <div className="pt-2">
             <a
-              href={hackathon.registrationUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full inline-flex items-center justify-center gap-2 font-display font-bold text-sm uppercase text-meshWhite bg-meshBlack border-2 border-meshBlack py-3 shadow-retro"
+              href="#register"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="w-full inline-flex items-center justify-center gap-2 font-display font-bold text-sm uppercase text-meshBlack bg-[#00E5FF] border-2 border-meshBlack py-3 shadow-retro"
             >
-              REGISTER NOW <ArrowUpRight className="w-4 h-4 text-meshYellow" />
+              REGISTER NOW (₹550) <ArrowUpRight className="w-4 h-4" />
             </a>
           </div>
         </div>

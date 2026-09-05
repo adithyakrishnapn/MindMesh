@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="qrGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF" />
+      <stop offset="50%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#00E5FF" />
+    </linearGradient>
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00E5FF" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="400" rx="16" fill="#0A0E1A" stroke="#00E5FF" stroke-width="3" />
+  <circle cx="200" cy="200" r="160" fill="url(#centerGlow)" />
+
+  <!-- Outer Guide Reticles -->
+  <path d="M 20 50 L 20 20 L 50 20" stroke="#00E5FF" stroke-width="4" fill="none" />
+  <path d="M 350 20 L 380 20 L 380 50" stroke="#00E5FF" stroke-width="4" fill="none" />
+  <path d="M 20 350 L 20 380 L 50 380" stroke="#00E5FF" stroke-width="4" fill="none" />
+  <path d="M 380 350 L 380 380 L 350 380" stroke="#00E5FF" stroke-width="4" fill="none" />
+
+  <!-- Corner Finder Patterns -->
+  <!-- Top Left -->
+  <rect x="50" y="50" width="80" height="80" rx="10" fill="none" stroke="#00E5FF" stroke-width="10" />
+  <rect x="68" y="68" width="44" height="44" rx="4" fill="#00E5FF" />
+
+  <!-- Top Right -->
+  <rect x="270" y="50" width="80" height="80" rx="10" fill="none" stroke="#00E5FF" stroke-width="10" />
+  <rect x="288" y="68" width="44" height="44" rx="4" fill="#00E5FF" />
+
+  <!-- Bottom Left -->
+  <rect x="50" y="270" width="80" height="80" rx="10" fill="none" stroke="#00E5FF" stroke-width="10" />
+  <rect x="68" y="288" width="44" height="44" rx="4" fill="#00E5FF" />
+
+  <!-- Stylized Matrix Data Pixels -->
+  <g fill="#FFFFFF">
+    <rect x="150" y="50" width="14" height="14" rx="2" />
+    <rect x="175" y="50" width="14" height="14" rx="2" fill="#00E5FF" />
+    <rect x="210" y="50" width="14" height="14" rx="2" />
+    <rect x="235" y="50" width="14" height="14" rx="2" />
+
+    <rect x="150" y="75" width="14" height="14" rx="2" fill="#00E5FF" />
+    <rect x="190" y="75" width="14" height="14" rx="2" />
+    <rect x="235" y="75" width="14" height="14" rx="2" fill="#00E5FF" />
+
+    <rect x="150" y="100" width="14" height="14" rx="2" />
+    <rect x="175" y="100" width="14" height="14" rx="2" />
+    <rect x="210" y="100" width="14" height="14" rx="2" fill="#00E5FF" />
+
+    <rect x="50" y="150" width="14" height="14" rx="2" />
+    <rect x="75" y="150" width="14" height="14" rx="2" fill="#00E5FF" />
+    <rect x="100" y="150" width="14" height="14" rx="2" />
+    <rect x="125" y="150" width="14" height="14" rx="2" />
+    <rect x="260" y="150" width="14" height="14" rx="2" />
+    <rect x="285" y="150" width="14" height="14" rx="2" fill="#00E5FF" />
+    <rect x="310" y="150" width="14" height="14" rx="2" />
+    <rect x="335" y="150" width="14" height="14" rx="2" />
+
+    <rect x="50" y="175" width="14" height="14" rx="2" fill="#00E5FF" />
+    <rect x="100" y="175" width="14" height="14" rx="2" />
+    <rect x="125" y="175" width="14" height="14" rx="2" fill="#00E5FF" />
+    <rect x="260" y="175" width="14" height="14" rx="2" fill="#00E5FF" />
+    <rect x="285" y="175" width="14" height="14" rx="2" />
+    <rect x="335" y="175" width="14" height="14" rx="2" fill="#00E5FF" />
+
+    <rect x="50" y="210" width="14" height="14" rx="2" />
+    <rect x="75" y="210" width="14" height="14" rx="2" />
+    <rect x="125" y="210" width="14" height="14" rx="2" />
+    <rect x="260" y="210" width="14" height="14" rx="2" />
+    <rect x="310" y="210" width="14" height="14" rx="2" fill="#00E5FF" />
+    <rect x="335" y="210" width="14" height="14" rx="2" />
+
+    <rect x="50" y="235" width="14" height="14" rx="2" fill="#00E5FF" />
+    <rect x="100" y="235" width="14" height="14" rx="2" />
+    <rect x="260" y="235" width="14" height="14" rx="2" fill="#00E5FF" />
+    <rect x="285" y="235" width="14" height="14" rx="2" />
+    <rect x="335" y="235" width="14" height="14" rx="2" fill="#00E5FF" />
+
+    <rect x="150" y="260" width="14" height="14" rx="2" />
+    <rect x="175" y="260" width="14" height="14" rx="2" fill="#00E5FF" />
+    <rect x="200" y="260" width="14" height="14" rx="2" />
+    <rect x="225" y="260" width="14" height="14" rx="2" />
+    <rect x="270" y="260" width="14" height="14" rx="2" />
+    <rect x="310" y="260" width="14" height="14" rx="2" fill="#00E5FF" />
+    <rect x="335" y="260" width="14" height="14" rx="2" />
+
+    <rect x="150" y="285" width="14" height="14" rx="2" fill="#00E5FF" />
+    <rect x="200" y="285" width="14" height="14" rx="2" />
+    <rect x="225" y="285" width="14" height="14" rx="2" fill="#00E5FF" />
+    <rect x="270" y="285" width="14" height="14" rx="2" fill="#00E5FF" />
+    <rect x="295" y="285" width="14" height="14" rx="2" />
+
+    <rect x="150" y="315" width="14" height="14" rx="2" />
+    <rect x="175" y="315" width="14" height="14" rx="2" />
+    <rect x="225" y="315" width="14" height="14" rx="2" />
+    <rect x="270" y="315" width="14" height="14" rx="2" />
+    <rect x="320" y="315" width="14" height="14" rx="2" fill="#00E5FF" />
+
+    <rect x="175" y="340" width="14" height="14" rx="2" fill="#00E5FF" />
+    <rect x="200" y="340" width="14" height="14" rx="2" />
+    <rect x="270" y="340" width="14" height="14" rx="2" />
+    <rect x="295" y="340" width="14" height="14" rx="2" fill="#00E5FF" />
+    <rect x="335" y="340" width="14" height="14" rx="2" />
+  </g>
+
+  <!-- Central AI Chip Emblem -->
+  <rect x="160" y="160" width="80" height="80" rx="14" fill="#050811" stroke="#00E5FF" stroke-width="4" filter="url(#neonGlow)" />
+  <text x="200" y="208" fill="#00E5FF" font-family="'JetBrains Mono', monospace" font-size="28" font-weight="900" text-anchor="middle" letter-spacing="2">AI</text>
+  <text x="200" y="226" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="1">HACKNEXT</text>
+
+  <!-- Micro Circuit Traces -->
+  <line x1="160" y1="180" x2="140" y2="180" stroke="#00E5FF" stroke-width="2" />
+  <line x1="160" y1="200" x2="135" y2="200" stroke="#00E5FF" stroke-width="2" />
+  <line x1="160" y1="220" x2="140" y2="220" stroke="#00E5FF" stroke-width="2" />
+
+  <line x1="240" y1="180" x2="260" y2="180" stroke="#00E5FF" stroke-width="2" />
+  <line x1="240" y1="200" x2="265" y2="200" stroke="#00E5FF" stroke-width="2" />
+  <line x1="240" y1="220" x2="260" y2="220" stroke="#00E5FF" stroke-width="2" />
+</svg>
