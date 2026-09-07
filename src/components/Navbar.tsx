@@ -20,24 +20,17 @@ export default function Navbar() {
     { name: "ABOUT", href: "#about", id: "about" },
     { name: "EXPECT", href: "#expect", id: "expect" },
     { name: "DOMAINS", href: "#challenge", id: "challenge" },
+    { name: "REGISTER & QR", href: "#register", id: "register" },
     { name: "SCHEDULE", href: "#timeline", id: "timeline" },
     { name: "PRIZES", href: "#prizes", id: "prizes" },
-    { name: "REGISTER & QR", href: "#register", id: "register" },
     { name: "CONTACT", href: "#coordinators", id: "coordinators" },
-    { name: "TERMS", href: "#terms", id: "terms" },
+    { name: "TERMS", href: "/terms", id: "terms" },
   ];
 
   // Scroll detection & IntersectionObserver for active section tracking
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 40);
-
-      if (
-        window.innerHeight + window.scrollY >=
-        document.documentElement.scrollHeight - 250
-      ) {
-        setActiveSection("terms");
-      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -61,8 +54,10 @@ export default function Navbar() {
     const observer = new IntersectionObserver(observerCallback, observerOptions);
 
     navLinks.forEach((link) => {
-      const el = document.getElementById(link.id);
-      if (el) observer.observe(el);
+      if (link.href.startsWith("#")) {
+        const el = document.getElementById(link.id);
+        if (el) observer.observe(el);
+      }
     });
 
     return () => {
@@ -76,7 +71,7 @@ export default function Navbar() {
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
-    if (isTermsPage) return;
+    if (isTermsPage || href.startsWith("/")) return;
     e.preventDefault();
     const targetId = href.replace("#", "");
     setActiveSection(targetId);

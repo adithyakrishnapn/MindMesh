@@ -15,7 +15,6 @@ import TeamMesh from "@/components/TeamMesh";
 import Prizes from "@/components/Prizes";
 import Organizers from "@/components/Organizers";
 import Coordinators from "@/components/Coordinators";
-import TermsAndConditions from "@/components/TermsAndConditions";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 
@@ -39,7 +38,6 @@ export default function Home() {
       <Prizes />
       <Organizers />
       <Coordinators />
-      <TermsAndConditions />
       <FinalCTA />
       <Footer />
     </main>

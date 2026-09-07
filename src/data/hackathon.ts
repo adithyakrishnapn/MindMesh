@@ -353,59 +353,59 @@ export const hackathon = {
 
   timeline: [
     {
-      time: "09:00 AM",
-      title: "CHECK-IN & KICKOFF",
-      phase: "HOUR 00 — 17 SEP",
-      description: "Arrival at DT Playhouse, SNS AI Campus, registration verification, participant kit collection, and electrifying opening ceremony.",
-      highlight: "DOORS OPEN",
+      time: "17 SEP — 09:00 AM",
+      title: "CHECK-IN, KIT COLLECTION & KICKOFF CEREMONY",
+      phase: "17 SEP • 09:00 AM",
+      description: "Arrival at DT Playhouse, SNS AI Campus, registration verification, kit collection, swag distribution, and electrifying kickoff ceremony.",
+      highlight: "CHECK-IN & KICKOFF",
       icon: "DoorOpen"
     },
     {
-      time: "10:30 AM",
+      time: "17 SEP — 10:30 AM",
       title: "HACKING COMMENCES",
-      phase: "HOUR 01 — 17 SEP",
-      description: "The 24-hour clock officially begins. Teams claim workstations, assemble architecture, and initialize codebases.",
-      highlight: "SPRINT LAUNCH",
+      phase: "17 SEP • 10:30 AM",
+      description: "The 24-hour clock officially begins! Teams claim workstations, assemble architecture, and initialize codebases.",
+      highlight: "24H CLOCK STARTS",
       icon: "Code"
     },
     {
-      time: "03:00 PM",
+      time: "17 SEP — 03:00 PM",
       title: "MENTORSHIP CHECKPOINT 1",
-      phase: "HOUR 06 — 17 SEP",
-      description: "Industry leaders and SNS AI mentors review project architectures, stress-test logic, and offer domain guidance.",
-      highlight: "EXPERT REVIEW",
+      phase: "17 SEP • 03:00 PM",
+      description: "Architecture review with domain experts and SNS AI mentors to stress-test logic and offer domain guidance.",
+      highlight: "ARCHITECTURE REVIEW",
       icon: "UserCheck"
     },
     {
-      time: "08:00 PM",
-      title: "DINNER & MID-WAY REVIEW",
-      phase: "HOUR 11 — 17 SEP",
-      description: "Refuel with dinner, rapid pitch tune-up, and mid-way working prototype evaluation by coordinators.",
-      highlight: "MIDWAY CHECK",
+      time: "17 SEP — 08:00 PM",
+      title: "DINNER & MID-WAY PROTOTYPE EVALUATION",
+      phase: "17 SEP • 08:00 PM",
+      description: "Refuel with dinner, rapid pitch tune-up, and mid-way working prototype evaluation by mentors and coordinators.",
+      highlight: "MID-WAY EVALUATION",
       icon: "Utensils"
     },
     {
-      time: "00:00 AM",
-      title: "MIDNIGHT ENERGY SURGE",
-      phase: "HOUR 15 — 18 SEP",
-      description: "Midnight snacks, coffee boosts, energetic beats, debugging sprint, and core AI model convergence.",
-      highlight: "MIDNIGHT SPRINT",
+      time: "18 SEP — 00:00 AM",
+      title: "MIDNIGHT ENERGY SURGE & BUG SQUASHING",
+      phase: "18 SEP • 00:00 AM",
+      description: "Midnight coffee boosts, energetic beats, rapid bug squashing sprint, and core AI model convergence.",
+      highlight: "MIDNIGHT ENERGY SURGE",
       icon: "Zap"
     },
     {
-      time: "07:00 AM",
-      title: "FEATURE FREEZE & DEPLOY",
-      phase: "HOUR 22 — 18 SEP",
-      description: "Feature lock, commit main branch, deploy live preview URLs, and synthesize 3-minute pitch decks.",
-      highlight: "STABILIZE & PITCH",
+      time: "18 SEP — 07:00 AM",
+      title: "FEATURE FREEZE, GITHUB COMMIT & DECK SUBMISSION",
+      phase: "18 SEP • 07:00 AM",
+      description: "Feature freeze! Push final commits to GitHub, deploy live preview URLs, and synthesize pitch deck slides.",
+      highlight: "FEATURE FREEZE",
       icon: "GitCommit"
     },
     {
-      time: "09:00 AM",
-      title: "GRAND DEMOS & CLOSING GALA",
-      phase: "HOUR 24 — 18 SEP",
-      description: "Teams pitch live solutions to jury. Announcement of winners, distribution of cash awards, and felicitation!",
-      highlight: "FINALE & AWARDS",
+      time: "18 SEP — 10:30 AM",
+      title: "GRAND DEMOS TO JURY, WINNER FELICITATION & CLOSING GALA",
+      phase: "18 SEP • 10:30 AM",
+      description: "Grand live project presentations to jury panel, winner felicitation ceremony, and closing gala!",
+      highlight: "GRAND DEMOS & FELICITATION",
       icon: "Trophy"
     }
   ] as TimelineItem[],

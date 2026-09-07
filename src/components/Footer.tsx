@@ -94,13 +94,13 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/#timeline" className="hover:text-[#00E5FF] transition-colors">
-                  24H SCHEDULE
+                <a href="/#register" className="hover:text-[#FFD21F] transition-colors text-white">
+                  SCAN TO REGISTER (₹550)
                 </a>
               </li>
               <li>
-                <a href="/#register" className="hover:text-[#FFD21F] transition-colors text-white">
-                  SCAN TO REGISTER (₹550)
+                <a href="/#timeline" className="hover:text-[#00E5FF] transition-colors">
+                  24H SCHEDULE
                 </a>
               </li>
               <li>
