@@ -130,14 +130,14 @@ export default function Hero() {
               </div>
               <div className="bg-white p-2.5 border-2 border-black shadow-retro flex items-center gap-2">
                 <Calendar className="w-4 h-4 text-black shrink-0" />
-                <span>17-18 SEP</span>
+                <span>8-9 OCT</span>
               </div>
               <div className="bg-white p-2.5 border-2 border-black shadow-retro flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-black shrink-0" />
                 <span className="truncate">DT PLAYHOUSE</span>
               </div>
               <div className="bg-meshYellow p-2.5 border-2 border-black shadow-retro flex items-center gap-2">
-                <span className="font-black text-sm">₹550</span>
+                <span className="font-black text-sm">₹500</span>
                 <span className="text-[10px]">EXT. FEE</span>
               </div>
             </div>
@@ -149,7 +149,7 @@ export default function Hero() {
                 className="text-sm sm:text-base px-8 py-4 bg-meshYellow text-meshBlack font-black hover:bg-[#00E5FF] hover:text-black border-2 border-meshBlack shadow-retro hover:shadow-retroLg transition-all"
               >
                 <span className="relative z-10 flex items-center gap-2 font-display font-black tracking-wider text-meshBlack uppercase">
-                  REGISTER NOW (₹550)
+                  REGISTER NOW (₹500)
                   <ArrowUpRight className="w-5 h-5 text-meshBlack group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </span>
               </MagneticButton>

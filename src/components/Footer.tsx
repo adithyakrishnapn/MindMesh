@@ -95,7 +95,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="/#register" className="hover:text-[#FFD21F] transition-colors text-white">
-                  SCAN TO REGISTER (₹550)
+                  SCAN TO REGISTER (₹500)
                 </a>
               </li>
               <li>

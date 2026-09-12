@@ -31,7 +31,7 @@ export default function Prizes() {
       highlights: prize.highlights || prize.perks,
       iconName: "Trophy",
       accentColor: prize.featured ? "#00E5FF" : "#FFD21F",
-      actionText: "COMPETE FOR THIS REWARD (₹550)",
+      actionText: "COMPETE FOR THIS REWARD (₹500)",
     });
     setIsModalOpen(true);
   };

@@ -7,7 +7,7 @@ import GrainTexture from "@/components/ui/GrainTexture";
 export const metadata: Metadata = {
   title: "HACKNEXT'26 SERIES 2.0 — AI-Powered 24-Hour Hackathon | SNS College of Technology",
   description:
-    "HACKNEXT'26 Series 2.0 is an elite AI-Powered 24-Hour Hackathon held on 17-18 September 2026 at DT Playhouse, SNS AI Campus, SNS College of Technology (Autonomous), Coimbatore. External participants fee: ₹550.",
+    "HACKNEXT'26 Series 2.0 is an elite AI-Powered 24-Hour Hackathon held on 8-9 October 2026 at DT Playhouse, SNS AI Campus, SNS College of Technology (Autonomous), Coimbatore. External participants fee: ₹500.",
   keywords: [
     "HACKNEXT'26",
     "Series 2.0",

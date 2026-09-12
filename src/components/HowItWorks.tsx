@@ -75,7 +75,7 @@ export default function HowItWorks() {
             href="#register"
             className="inline-flex items-center gap-3 font-display font-black text-base uppercase bg-[#00E5FF] text-black px-8 py-4 border-2 border-meshBlack shadow-retro hover:shadow-retroLg hover:-translate-y-1 transition-all"
           >
-            START STEP 01 — REGISTER YOUR TEAM (₹550) <ArrowRight className="w-5 h-5" />
+            START STEP 01 — REGISTER YOUR TEAM (₹500) <ArrowRight className="w-5 h-5" />
           </a>
         </div>
       </div>

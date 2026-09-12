@@ -86,8 +86,8 @@ export const hackathon = {
   tagline: "INNOVATE TODAY. TRANSFORM TOMORROW.",
   codeTagline: "< CODE · CREATE · CONQUER · TRANSFORM />",
   bottomMotto: "THINK BEYOND. BUILD BEYOND. LEAD BEYOND.",
-  date: "17, 18 SEPTEMBER 2026",
-  shortDate: "17 - 18 SEP 2026",
+  date: "8, 9 OCTOBER 2026",
+  shortDate: "8 - 9 OCT 2026",
   startTime: "9:00 AM ONWARDS",
   duration: "24 Hours",
   durationTag: "ONE DAY. ENDLESS POSSIBILITIES.",
@@ -98,7 +98,7 @@ export const hackathon = {
   teamSize: "2 - 4 Members per team",
   
   // Registration details
-  externalFee: "₹550",
+  externalFee: "₹500",
   feeNote: "External Participants",
   totalPrizePool: "₹20,000",
   registrationUrl: "https://docs.google.com/forms/d/e/1FAIpQLSd9cj6W2z8va-97_m4DlgDVTf2vCUdbK7eGtigIMWh753ofrA/viewform?usp=send_form",
@@ -241,8 +241,8 @@ export const hackathon = {
 
   stats: [
     { value: "24", unit: "HOURS", label: "Non-Stop Building", description: "One Day. Endless Possibilities." },
-    { value: "18", unit: "SEP", label: "17-18 September 2026", description: "From 9:00 AM Onwards @ DT Playhouse" },
-    { value: "550", unit: "INR", label: "External Fee ₹550", description: "All-inclusive 24H hackathon experience" },
+    { value: "9", unit: "OCT", label: "8-9 October 2026", description: "From 9:00 AM Onwards @ DT Playhouse" },
+    { value: "500", unit: "INR", label: "External Fee ₹500", description: "All-inclusive 24H hackathon experience" },
     { value: "1000", unit: "STARTUPS", label: "SNS I-Startups", description: "Celebrated in 10 Years of Innovation" }
   ],
 
@@ -504,7 +504,7 @@ export const hackathon = {
     {
       step: "01",
       title: "SCAN QR TO OPEN FORM",
-      desc: "Scan the website QR or click the register link to open the official Google Form. The ₹550 fee payment QR is provided directly inside the form."
+      desc: "Scan the website QR or click the register link to open the official Google Form. The ₹500 fee payment QR is provided directly inside the form."
     },
     {
       step: "02",
@@ -532,12 +532,12 @@ export const hackathon = {
     {
       id: "faq-2",
       question: "When and where is HACKNEXT'26 taking place?",
-      answer: "The hackathon will take place in-person on 17 and 18 September 2026, kicking off from 9:00 AM onwards at DT Playhouse, SNS AI Campus, SNS College of Technology, Coimbatore - 641035."
+      answer: "The hackathon will take place in-person on 8 and 9 October 2026, kicking off from 9:00 AM onwards at DT Playhouse, SNS AI Campus, SNS College of Technology, Coimbatore - 641035."
     },
     {
       id: "faq-3",
       question: "What is the participation fee and how do I pay?",
-      answer: "The participation fee is ₹550 for external participants. When you scan the website QR code or click 'OPEN REGISTRATION FORM', you are directed to the official Google Form. Inside the form, you will find the official Fee Payment QR Code to complete the ₹550 payment and upload your transaction proof."
+      answer: "The participation fee is ₹500 for external participants. When you scan the website QR code or click 'OPEN REGISTRATION FORM', you are directed to the official Google Form. Inside the form, you will find the official Fee Payment QR Code to complete the ₹500 payment and upload your transaction proof."
     },
     {
       id: "faq-4",

@@ -48,7 +48,7 @@ export default function Challenge() {
       tags: track.tags,
       iconName: track.iconName,
       accentColor: track.accentColor,
-      actionText: `REGISTER FOR ${track.title.split(" ")[0]} (₹550)`,
+      actionText: `REGISTER FOR ${track.title.split(" ")[0]} (₹500)`,
     });
     setIsModalOpen(true);
   };

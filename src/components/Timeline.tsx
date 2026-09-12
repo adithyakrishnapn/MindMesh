@@ -65,7 +65,7 @@ export default function Timeline() {
       ],
       iconName: currentItem.icon,
       accentColor: "#00E5FF",
-      actionText: "JOIN THE 24H SPRINT (₹550)",
+      actionText: "JOIN THE 24H SPRINT (₹500)",
     });
     setIsModalOpen(true);
   };

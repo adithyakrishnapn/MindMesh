@@ -60,7 +60,7 @@ export default function FinalCTA() {
             onClick={triggerConfetti}
             className="text-base sm:text-lg px-10 py-5 bg-meshBlack text-[#00E5FF] hover:bg-white hover:text-meshBlack border-2 border-black shadow-retro"
           >
-            REGISTER NOW (₹550) <ArrowUpRight className="w-6 h-6" />
+            REGISTER NOW (₹500) <ArrowUpRight className="w-6 h-6" />
           </MagneticButton>
 
           <a

@@ -38,7 +38,7 @@ export default function WhatToExpect() {
       highlights: item.highlights,
       iconName: item.icon,
       accentColor: idx % 2 === 0 ? "#FFD21F" : "#00E5FF",
-      actionText: "CLAIM YOUR HACKATHON SLOT (₹550)",
+      actionText: "CLAIM YOUR HACKATHON SLOT (₹500)",
     });
     setIsModalOpen(true);
   };

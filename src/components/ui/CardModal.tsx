@@ -104,7 +104,7 @@ export default function CardModal({ isOpen, onClose, data }: CardModalProps) {
   const IconComp = (data.iconName && modalIcons[data.iconName]) || Sparkles;
   const accentColor = data.accentColor || "#00E5FF";
   const registerUrl = data.actionUrl || hackathon.registrationUrl;
-  const actionText = data.actionText || "REGISTER FOR THIS NOW (₹550)";
+  const actionText = data.actionText || "REGISTER FOR THIS NOW (₹500)";
 
   return (
     <AnimatePresence>

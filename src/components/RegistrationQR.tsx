@@ -63,7 +63,7 @@ export default function RegistrationQR() {
           <p className="mt-4 font-body text-base sm:text-lg text-gray-300 font-medium leading-relaxed">
             Scan this QR code with your phone camera or Google Lens to open the official Google Registration Form.{" "}
             <strong className="text-[#FFD21F] bg-black/40 px-2 py-0.5 border border-[#FFD21F]/30">
-              The fee payment QR (₹550) is provided directly inside the form!
+              The fee payment QR (₹500) is provided directly inside the form!
             </strong>
           </p>
         </div>
@@ -134,12 +134,12 @@ export default function RegistrationQR() {
                     PAYMENT QR IS INSIDE FORM
                   </span>
                   <span className="font-mono text-[11px] text-gray-300">
-                    Scan form QR ➔ Pay ₹550 via QR inside form
+                    Scan form QR ➔ Pay ₹500 via QR inside form
                   </span>
                 </div>
 
                 <div className="bg-[#00E5FF] text-black font-display font-black text-xs px-3 py-1.5 border border-black shadow-retro whitespace-nowrap">
-                  ₹550 / PARTICIPANT
+                  ₹500 / PARTICIPANT
                 </div>
               </div>
 
@@ -178,7 +178,7 @@ export default function RegistrationQR() {
                     <CreditCard className="w-4 h-4" /> 03. PAY VIA FORM QR
                   </div>
                   <p className="text-gray-300 text-[11px] leading-relaxed">
-                    Scan the Fee Payment QR (₹550) embedded inside the Google Form and upload payment proof.
+                    Scan the Fee Payment QR (₹500) embedded inside the Google Form and upload payment proof.
                   </p>
                 </div>
               </div>
@@ -271,7 +271,7 @@ export default function RegistrationQR() {
               </div>
 
               <p className="mt-3 font-mono text-[11px] text-gray-400">
-                * Note: The payment QR code for ₹550 fee is located inside this Google Form. Confirmation will be verified upon arrival.
+                * Note: The payment QR code for ₹500 fee is located inside this Google Form. Confirmation will be verified upon arrival.
               </p>
             </div>
 
@@ -332,7 +332,7 @@ export default function RegistrationQR() {
                   HACKNEXT'26 SERIES 2.0
                 </h3>
                 <p className="font-mono text-xs text-gray-300 mt-1">
-                  Payment QR for ₹550 fee is provided directly inside the form!
+                  Payment QR for ₹500 fee is provided directly inside the form!
                 </p>
               </div>
 

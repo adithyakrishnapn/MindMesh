@@ -25,15 +25,15 @@ export const termsList = [
   {
     id: 4,
     title: "24-Hour AI Building Duration",
-    text: "The problem statements and AI domains test real-world innovation within the 24-hour hackathon duration starting 9:00 AM on 17 September 2026.",
+    text: "The problem statements and AI domains test real-world innovation within the 24-hour hackathon duration starting 9:00 AM on 8 October 2026.",
     highlight: "24-hour hackathon duration",
-    secondaryHighlight: "9:00 AM on 17 September 2026",
+    secondaryHighlight: "9:00 AM on 8 October 2026",
   },
   {
     id: 5,
     title: "Participation Fee & Inclusions",
-    text: "External participants must complete the registration fee of ₹550 per participant covering 24-hour campus access, certificates, Wi-Fi, and lab facilities.",
-    highlight: "₹550 per participant",
+    text: "External participants must complete the registration fee of ₹500 per participant covering 24-hour campus access, certificates, Wi-Fi, and lab facilities.",
+    highlight: "₹500 per participant",
   },
   {
     id: 6,

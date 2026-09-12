@@ -166,7 +166,7 @@ export default function Navbar() {
             href="#register"
             className="text-xs px-4 py-2.5 bg-meshBlack text-[#00E5FF] hover:bg-[#00E5FF] hover:text-black"
           >
-            REGISTER NOW (₹550) <ArrowUpRight className="w-4 h-4" />
+            REGISTER NOW (₹500) <ArrowUpRight className="w-4 h-4" />
           </MagneticButton>
         </div>
 
@@ -233,7 +233,7 @@ export default function Navbar() {
               onClick={() => setIsMobileMenuOpen(false)}
               className="w-full inline-flex items-center justify-center gap-2 font-display font-bold text-sm uppercase text-meshBlack bg-[#00E5FF] border-2 border-meshBlack py-3 shadow-retro"
             >
-              REGISTER NOW (₹550) <ArrowUpRight className="w-4 h-4" />
+              REGISTER NOW (₹500) <ArrowUpRight className="w-4 h-4" />
             </a>
           </div>
         </div>

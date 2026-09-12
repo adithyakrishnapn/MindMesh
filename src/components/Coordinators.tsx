@@ -31,7 +31,7 @@ export default function Coordinators() {
       ],
       iconName: "Phone",
       accentColor: "#00E5FF",
-      actionText: "OPEN REGISTRATION FORM (₹550)",
+      actionText: "OPEN REGISTRATION FORM (₹500)",
       actionUrl: hackathon.registrationUrl,
     });
     setIsModalOpen(true);
