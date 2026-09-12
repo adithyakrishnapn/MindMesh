@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { hackathon } from "@/data/hackathon";
 import AnimatedText from "@/components/ui/AnimatedText";
@@ -13,19 +12,19 @@ import {
   Check,
   Zap,
   PhoneCall,
-  ShieldCheck,
   Clock,
   MapPin,
   Maximize2,
   X,
   CreditCard,
   FileText,
-  UserCheck,
+  Users,
+  MessageCircle,
 } from "lucide-react";
 
 export default function RegistrationQR() {
   const [copied, setCopied] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeModalQr, setActiveModalQr] = useState<"form" | "community" | null>(null);
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(hackathon.registrationUrl);
@@ -61,9 +60,9 @@ export default function RegistrationQR() {
           </h2>
 
           <p className="mt-4 font-body text-base sm:text-lg text-gray-300 font-medium leading-relaxed">
-            Scan this QR code with your phone camera or Google Lens to open the official Google Registration Form.{" "}
+            Scan the official registration QR code or tap the link to open the form and submit your squad details.{" "}
             <strong className="text-[#FFD21F] bg-black/40 px-2 py-0.5 border border-[#FFD21F]/30">
-              The fee payment QR (₹500) is provided directly inside the form!
+              Registration Fee: ₹500 / Person (Includes 3 meals, 4 refreshments & 24H access).
             </strong>
           </p>
         </div>
@@ -71,9 +70,9 @@ export default function RegistrationQR() {
         {/* Main Interactive Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
-          {/* Left Column: QR Code Display Card */}
+          {/* Left Column: Official Registration Form QR Code Display Card */}
           <div className="lg:col-span-5 flex flex-col items-center">
-            <div className="relative w-full max-w-md bg-[#111827] border-4 border-[#00E5FF] p-6 sm:p-8 shadow-[8px_8px_0px_0px_#FFD21F] relative group">
+            <div className="relative w-full max-w-md bg-[#111827] border-4 border-[#00E5FF] p-6 sm:p-8 shadow-[8px_8px_0px_0px_#FFD21F] group">
               
               {/* Corner Sci-Fi Tech Accents */}
               <div className="absolute -top-2 -left-2 w-4 h-4 bg-[#FFD21F] border border-black" />
@@ -86,28 +85,27 @@ export default function RegistrationQR() {
                 <div className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#00E5FF] animate-ping" />
                   <span className="font-mono text-xs font-black tracking-widest text-[#00E5FF] uppercase">
-                    SCAN TO OPEN GOOGLE FORM
+                    REGISTRATION FORM QR
                   </span>
                 </div>
                 <span className="badge-sticker bg-[#FFD21F] text-black text-[10px]">
-                  FORM QR
+                  SCAN FORM QR
                 </span>
               </div>
 
               {/* QR Container with Laser Scan Animation */}
               <div
-                onClick={() => setIsModalOpen(true)}
+                onClick={() => setActiveModalQr("form")}
                 className="relative w-full max-w-[320px] aspect-square mx-auto bg-white border-4 border-[#00E5FF] flex items-center justify-center p-4 cursor-pointer overflow-hidden group/qr shadow-[6px_6px_0px_0px_#FFD21F]"
               >
                 {/* QR Code Image */}
                 <div className="relative w-full h-full flex items-center justify-center">
-                  <Image
-                    src={hackathon.qrCodePath}
-                    alt="HackNext'26 Registration Form QR Code"
+                  <img
+                    src={hackathon.formQrPath}
+                    alt="HackNext'26 Official Registration Form QR Code"
                     width={280}
                     height={280}
                     className="object-contain w-full h-full"
-                    priority
                   />
                 </div>
 
@@ -131,15 +129,15 @@ export default function RegistrationQR() {
               <div className="mt-4 pt-3 border-t border-gray-700 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
                 <div>
                   <span className="font-display font-black text-sm text-[#FFD21F] uppercase tracking-wider block">
-                    PAYMENT QR IS INSIDE FORM
+                    REGISTRATION FORM QR
                   </span>
                   <span className="font-mono text-[11px] text-gray-300">
-                    Scan form QR ➔ Pay ₹500 via QR inside form
+                    Scan QR ➔ Fill Squad Form & Pay Fee
                   </span>
                 </div>
 
                 <div className="bg-[#00E5FF] text-black font-display font-black text-xs px-3 py-1.5 border border-black shadow-retro whitespace-nowrap">
-                  ₹500 / PARTICIPANT
+                  ₹500 / PERSON
                 </div>
               </div>
 
@@ -160,7 +158,7 @@ export default function RegistrationQR() {
                     <QrCode className="w-4 h-4" /> 01. SCAN QR
                   </div>
                   <p className="text-gray-300 text-[11px] leading-relaxed">
-                    Scan the QR on this page or click "OPEN FORM" to access the official Google Form.
+                    Scan the form QR code above or tap the button to open the official registration portal.
                   </p>
                 </div>
 
@@ -169,16 +167,16 @@ export default function RegistrationQR() {
                     <FileText className="w-4 h-4" /> 02. SQUAD INFO
                   </div>
                   <p className="text-gray-300 text-[11px] leading-relaxed">
-                    Enter your team details (2-4 members), college name, and chosen AI innovation domain.
+                    Enter your team details (1-4 members per squad), college, and chosen innovation track.
                   </p>
                 </div>
 
                 <div className="p-3 bg-[#111827] border-2 border-[#FFD21F]">
                   <div className="flex items-center gap-2 font-display font-black text-[#FFD21F] mb-1">
-                    <CreditCard className="w-4 h-4" /> 03. PAY VIA FORM QR
+                    <CreditCard className="w-4 h-4" /> 03. COMPLETE PAYMENT
                   </div>
                   <p className="text-gray-300 text-[11px] leading-relaxed">
-                    Scan the Fee Payment QR (₹500) embedded inside the Google Form and upload payment proof.
+                    Complete the ₹500 / person fee to confirm your 24-hour campus pass and meal vouchers.
                   </p>
                 </div>
               </div>
@@ -203,7 +201,7 @@ export default function RegistrationQR() {
 
                 <div className="bg-[#FFD21F] text-black p-3 border-2 border-black font-mono text-xs font-black uppercase text-center shadow-retro">
                   <span className="block">24-HOUR ACCESS</span>
-                  <span className="text-[10px] opacity-80">ALL INCLUSIVE</span>
+                  <span className="text-[10px] opacity-80">INCLUDES 3 MEALS + 4 REFRESHMENTS</span>
                 </div>
               </div>
 
@@ -215,15 +213,15 @@ export default function RegistrationQR() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-[#00E5FF] shrink-0" />
-                  <span>Winner & Participation Certificates</span>
+                  <span>Participation Certificate for All</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-[#00E5FF] shrink-0" />
-                  <span>Mentoring by Industry AI Experts</span>
+                  <span>3 Meals + 4 Refreshments</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-[#00E5FF] shrink-0" />
-                  <span>High-Speed Wi-Fi & Electricity</span>
+                  <span>Top Team Gets Internship Opportunity</span>
                 </div>
               </div>
 
@@ -241,7 +239,7 @@ export default function RegistrationQR() {
             {/* Direct Form Link Actions Card */}
             <div className="p-6 bg-[#111827] border-2 border-gray-700">
               <span className="font-mono text-xs font-bold text-gray-400 uppercase tracking-widest block mb-2">
-                PREFER DIRECT FORM LINK ON YOUR DEVICE?
+                READY TO REGISTER FROM YOUR DEVICE?
               </span>
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
@@ -269,10 +267,6 @@ export default function RegistrationQR() {
                   )}
                 </button>
               </div>
-
-              <p className="mt-3 font-mono text-[11px] text-gray-400">
-                * Note: The payment QR code for ₹500 fee is located inside this Google Form. Confirmation will be verified upon arrival.
-              </p>
             </div>
 
             {/* Student Coordinators Quick Contact Bar */}
@@ -280,7 +274,7 @@ export default function RegistrationQR() {
               <div className="flex items-center gap-2">
                 <PhoneCall className="w-4 h-4 text-[#FFD21F]" />
                 <span className="font-mono text-xs font-bold text-white">
-                  NEED REGISTRATION HELP? CONTACT COORDINATORS:
+                  REGISTRATION HELPLINE:
                 </span>
               </div>
 
@@ -300,14 +294,93 @@ export default function RegistrationQR() {
           </div>
 
         </div>
+
+        {/* Dedicated Community WhatsApp Group Section */}
+        <div id="community" className="mt-20 pt-16 border-t-2 border-gray-800">
+          <div className="card-playful p-8 bg-gradient-to-r from-[#0D2818] via-[#051F10] to-[#0A0E1A] border-4 border-emerald-400 shadow-[8px_8px_0px_0px_#00E5FF]">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              
+              {/* Left Column: Community Info & CTA */}
+              <div className="lg:col-span-7 flex flex-col justify-between">
+                <div>
+                  <div className="inline-flex items-center gap-2 bg-emerald-500 text-black font-mono font-black text-xs px-3.5 py-1.5 border border-black mb-4 uppercase tracking-widest">
+                    <MessageCircle className="w-4 h-4 fill-black" /> HACKATHON COMMUNITY GROUP
+                  </div>
+
+                  <h3 className="font-display font-black text-3xl sm:text-5xl text-white uppercase leading-tight mb-3">
+                    JOIN THE OFFICIAL <br />
+                    <span className="text-emerald-400 drop-shadow-[3px_3px_0px_#000000]">
+                      WHATSAPP COMMUNITY
+                    </span>
+                  </h3>
+
+                  <p className="font-body text-base text-gray-200 font-semibold leading-relaxed mb-6">
+                    Connect with fellow hackers, organizers, mentors, receive live event announcements, squad formation requests, and real-time updates!
+                  </p>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6 font-mono text-xs font-bold text-gray-300">
+                    <div className="p-3 bg-black/60 border border-emerald-500/40 flex items-center gap-2">
+                      <Users className="w-4 h-4 text-emerald-400 shrink-0" />
+                      <span>Meet Peer Builders & Team Mates</span>
+                    </div>
+                    <div className="p-3 bg-black/60 border border-emerald-500/40 flex items-center gap-2">
+                      <Sparkles className="w-4 h-4 text-emerald-400 shrink-0" />
+                      <span>Live Hackathon Announcements</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-4">
+                  <a
+                    href={hackathon.whatsappCommunityUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 font-display font-black text-sm uppercase bg-emerald-500 text-black px-8 py-4 border-2 border-black hover:bg-[#00E5FF] transition-all shadow-[4px_4px_0px_0px_#FFFFFF]"
+                  >
+                    <MessageCircle className="w-5 h-5 fill-black" /> JOIN WHATSAPP COMMUNITY <ArrowUpRight className="w-5 h-5" />
+                  </a>
+
+                  <button
+                    onClick={() => setActiveModalQr("community")}
+                    className="inline-flex items-center justify-center gap-2 font-mono text-xs font-bold uppercase bg-white/10 text-white px-5 py-4 border border-emerald-400/50 hover:bg-white/20 transition-colors"
+                  >
+                    <QrCode className="w-4 h-4 text-emerald-400" /> SCAN COMMUNITY QR
+                  </button>
+                </div>
+              </div>
+
+              {/* Right Column: Poster Image Preview */}
+              <div className="lg:col-span-5 flex justify-center">
+                <div
+                  onClick={() => setActiveModalQr("community")}
+                  className="relative w-full max-w-[300px] bg-emerald-950 p-3 border-4 border-emerald-400 shadow-[6px_6px_0px_0px_#00E5FF] cursor-pointer group/comp"
+                >
+                  <img
+                    src={hackathon.communityQrPath}
+                    alt="HackNext 2.0 WhatsApp Group QR Code"
+                    className="w-full h-auto object-contain border-2 border-black"
+                  />
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover/comp:opacity-100 transition-opacity flex flex-col items-center justify-center gap-2">
+                    <Maximize2 className="w-8 h-8 text-emerald-400 animate-bounce" />
+                    <span className="font-mono text-xs font-bold text-white uppercase tracking-wider">
+                      Click to Enlarge Group QR
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
       </div>
 
-      {/* QR Zoom Modal */}
+      {/* QR Zoom Modal (Form or Community) */}
       <AnimatePresence>
-        {isModalOpen && (
+        {activeModalQr && (
           <div
             className="fixed inset-0 z-[99999] bg-black/90 backdrop-blur-md flex items-center justify-center p-4"
-            onClick={() => setIsModalOpen(false)}
+            onClick={() => setActiveModalQr(null)}
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
@@ -317,45 +390,84 @@ export default function RegistrationQR() {
               className="relative max-w-sm w-full bg-[#111827] border-4 border-[#00E5FF] p-6 shadow-[10px_10px_0px_0px_#FFD21F]"
             >
               <button
-                onClick={() => setIsModalOpen(false)}
+                onClick={() => setActiveModalQr(null)}
                 className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black text-white flex items-center justify-center border border-gray-600 hover:bg-[#FFD21F] hover:text-black transition-colors"
                 aria-label="Close QR Modal"
               >
                 <X className="w-5 h-5" />
               </button>
 
-              <div className="text-center mb-4">
-                <span className="badge-sticker bg-[#FFD21F] text-black text-xs mb-2">
-                  OPENS GOOGLE REGISTRATION FORM
-                </span>
-                <h3 className="font-display font-black text-xl text-white uppercase">
-                  HACKNEXT'26 SERIES 2.0
-                </h3>
-                <p className="font-mono text-xs text-gray-300 mt-1">
-                  Payment QR for ₹500 fee is provided directly inside the form!
-                </p>
-              </div>
+              {activeModalQr === "form" ? (
+                <>
+                  <div className="text-center mb-4">
+                    <span className="badge-sticker bg-[#FFD21F] text-black text-xs mb-2">
+                      REGISTRATION FORM QR
+                    </span>
+                    <h3 className="font-display font-black text-xl text-white uppercase">
+                      HACKNEXT'26 SERIES 2.0
+                    </h3>
+                    <p className="font-mono text-xs text-gray-300 mt-1">
+                      Scan to open the official registration portal.
+                    </p>
+                  </div>
 
-              <div className="relative aspect-square w-full max-w-[280px] mx-auto bg-white border-2 border-[#00E5FF] p-2 flex items-center justify-center">
-                <Image
-                  src={hackathon.qrCodePath}
-                  alt="HackNext'26 Large Form QR"
-                  width={260}
-                  height={260}
-                  className="object-contain w-full h-full"
-                />
-              </div>
+                  <div className="relative aspect-square w-full max-w-[280px] mx-auto bg-white border-2 border-[#00E5FF] p-2 flex items-center justify-center">
+                    <img
+                      src={hackathon.formQrPath}
+                      alt="HackNext'26 Official Registration Form QR Code"
+                      width={260}
+                      height={260}
+                      className="object-contain w-full h-full"
+                    />
+                  </div>
 
-              <div className="mt-4 text-center">
-                <a
-                  href={hackathon.registrationUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 w-full font-display font-black text-xs uppercase bg-[#00E5FF] text-black py-3 border border-black shadow-retro hover:bg-[#FFD21F] transition-colors"
-                >
-                  OPEN REGISTRATION FORM LINK <ArrowUpRight className="w-4 h-4" />
-                </a>
-              </div>
+                  <div className="mt-4 text-center">
+                    <a
+                      href={hackathon.registrationUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 w-full font-display font-black text-xs uppercase bg-[#00E5FF] text-black py-3 border border-black shadow-retro hover:bg-[#FFD21F] transition-colors"
+                    >
+                      OPEN REGISTRATION FORM <ArrowUpRight className="w-4 h-4" />
+                    </a>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="text-center mb-4">
+                    <span className="badge-sticker bg-emerald-400 text-black text-xs mb-2">
+                      WHATSAPP COMMUNITY GROUP
+                    </span>
+                    <h3 className="font-display font-black text-xl text-white uppercase">
+                      HACKNEXT 2.0 COMMUNITY
+                    </h3>
+                    <p className="font-mono text-xs text-gray-300 mt-1">
+                      Scan with WhatsApp camera to join the group.
+                    </p>
+                  </div>
+
+                  <div className="relative aspect-square w-full max-w-[280px] mx-auto bg-white border-2 border-emerald-400 p-2 flex items-center justify-center">
+                    <img
+                      src={hackathon.communityQrPath}
+                      alt="HackNext 2.0 WhatsApp Group QR Code"
+                      width={260}
+                      height={260}
+                      className="object-contain w-full h-full"
+                    />
+                  </div>
+
+                  <div className="mt-4 text-center">
+                    <a
+                      href={hackathon.whatsappCommunityUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 w-full font-display font-black text-xs uppercase bg-emerald-500 text-black py-3 border border-black shadow-retro hover:bg-[#00E5FF] transition-colors"
+                    >
+                      JOIN WHATSAPP GROUP <ArrowUpRight className="w-4 h-4" />
+                    </a>
+                  </div>
+                </>
+              )}
             </motion.div>
           </div>
         )}

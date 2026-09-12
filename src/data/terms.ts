@@ -7,13 +7,13 @@ export interface TermsSection {
 
 export const termsData = {
   title: "TERMS & CONDITIONS",
-  subtitle: "HACKNEXT'26 — SERIES 2.0 (AI-POWERED 24-HOUR HACKATHON)",
+  subtitle: "HACKNEXT'26 — SERIES 2.0 (24 HOURS HACKATHON)",
   organizer: {
     college: "SNS College of Technology, Coimbatore",
-    campus: "DT Playhouse, SNS AI Campus",
-    dates: "8, 9 October 2026",
+    campus: "SNS AI Campus, Coimbatore",
+    dates: "08 - 09 October 2026",
     startTime: "9:00 AM Onwards",
-    fee: "₹500 per external participant",
+    fee: "₹500 / person",
   },
   disclaimer:
     "By submitting the registration form or scanning the official QR code, participants confirm that they have read, understood, and agree to the Terms & Conditions of HACKNEXT'26 Series 2.0.",
@@ -40,7 +40,7 @@ export const termsData = {
       num: "03",
       title: "Team Size & Composition",
       content: [
-        "Team size must be between 2 and 4 members.",
+        "Team size must be between 1 and 4 members.",
         "Inter-college and cross-specialization teams are enthusiastically permitted to foster diverse collaboration.",
       ],
     },
@@ -49,8 +49,8 @@ export const termsData = {
       num: "04",
       title: "Problem Statement & Duration",
       content: [
-        "Problem statements and AI domain tracks are formulated to test real-world innovation under the 24-hour sprint duration.",
-        "Teams must develop their solution within the official 24-hour hackathon duration starting at 9:00 AM on 8 October 2026 at DT Playhouse, SNS College of Technology, Coimbatore.",
+        "Problem statements and domain tracks are formulated to test real-world innovation under the 24-hour sprint duration.",
+        "Teams must develop their solution within the official 24-hour hackathon duration starting at 9:00 AM on 08 October 2026 at DT Playhouse, SNS AI Campus, SNS College of Technology, Coimbatore.",
       ],
     },
     {
@@ -58,8 +58,8 @@ export const termsData = {
       num: "05",
       title: "Participation Fee & Inclusions",
       content: [
-        "External participants must complete the registration fee payment of ₹500 per participant through the designated official payment gateway or on-campus desk.",
-        "The registration fee covers 24-hour hackathon access, high-speed Wi-Fi, mentorship sessions, participation certificates, and lab facilities at DT Playhouse, SNS AI Campus.",
+        "Participants must complete the registration fee payment of ₹500 per person.",
+        "The registration fee covers 24-hour hackathon access, high-speed Wi-Fi, mentorship sessions, participation certificates for all, 3 meals (lunch, dinner, breakfast), 4 refreshments, and campus lab facilities.",
       ],
     },
     {

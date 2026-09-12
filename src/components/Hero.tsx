@@ -160,6 +160,13 @@ export default function Hero() {
               >
                 <QrCode className="w-4 h-4" /> SCAN FORM QR
               </a>
+
+              <a
+                href="#community"
+                className="inline-flex items-center gap-2 font-display font-bold text-xs uppercase tracking-wider px-5 py-4 border-2 border-meshBlack bg-[#00E5FF] text-black hover:bg-black hover:text-[#00E5FF] transition-colors shadow-retro"
+              >
+                JOIN COMMUNITY 💬
+              </a>
             </div>
           </div>
 

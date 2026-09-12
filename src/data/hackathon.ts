@@ -45,6 +45,11 @@ export interface Coordinator {
   role: string;
 }
 
+export interface FacultyCoordinator {
+  name: string;
+  role: string;
+}
+
 export interface Pillar {
   id: string;
   title: string;
@@ -64,6 +69,7 @@ export interface Expectation {
 
 export interface OrganizerInfo {
   department: string;
+  streamCluster: string;
   college: string;
   campus: string;
   location: string;
@@ -82,28 +88,31 @@ export interface OrganizerInfo {
 export const hackathon = {
   name: "HACKNEXT'26",
   edition: "SERIES 2.0",
-  subtitle: "AI-POWERED 24-HOUR HACKATHON",
-  tagline: "INNOVATE TODAY. TRANSFORM TOMORROW.",
-  codeTagline: "< CODE · CREATE · CONQUER · TRANSFORM />",
-  bottomMotto: "THINK BEYOND. BUILD BEYOND. LEAD BEYOND.",
-  date: "8, 9 OCTOBER 2026",
-  shortDate: "8 - 9 OCT 2026",
+  subtitle: "24 HOURS HACKATHON",
+  tagline: "IDEAS TODAY | IMPACT TOMORROW",
+  codeTagline: "< IDEATE · BUILD · COLLABORATE · CODE />",
+  bottomMotto: "A BRIGHTER TOMORROW",
+  date: "08 - 09 OCTOBER 2026",
+  shortDate: "08 - 09 OCT 2026",
   startTime: "9:00 AM ONWARDS",
   duration: "24 Hours",
   durationTag: "ONE DAY. ENDLESS POSSIBILITIES.",
-  venue: "DT Playhouse, SNS College of Technology, Coimbatore",
+  venue: "DT Playhouse, SNS AI Campus, Coimbatore",
   venueHall: "DT PLAYHOUSE",
-  campusName: "DT PLAYHOUSE, SNS AI CAMPUS",
+  campusName: "SNS AI CAMPUS, COIMBATORE",
   mode: "In-Person 24-Hour Campus Hackathon",
-  teamSize: "2 - 4 Members per team",
+  teamSize: "1 - 4 Members per team",
   
   // Registration details
-  externalFee: "₹500",
-  feeNote: "External Participants",
-  totalPrizePool: "₹20,000",
-  registrationUrl: "https://docs.google.com/forms/d/e/1FAIpQLSd9cj6W2z8va-97_m4DlgDVTf2vCUdbK7eGtigIMWh753ofrA/viewform?usp=send_form",
+  externalFee: "₹500 / PERSON",
+  feeNote: "Registration Fee ₹500 / Person",
+  totalPrizePool: "UP TO ₹20,000",
+  registrationUrl: "https://wa.me/919361278375?text=Hi%20Gugan%2C%20I%20want%20to%20register%20for%20HACKNEXT%2726%20Series%202.0.%20Please%20share%20the%20registration%20and%20payment%20details.",
+  whatsappCommunityUrl: "https://chat.whatsapp.com/HackNext2 Community",
   isRegistrationUrlConfirmed: true,
-  qrCodePath: "/assets/hacknext-qr.png",
+  qrCodePath: "/assets/registration-form-qr.png",
+  formQrPath: "/assets/registration-form-qr.png",
+  communityQrPath: "/assets/whatsapp-community-qr.jpg",
   slotsNote: "LIMITED SLOTS! REGISTER NOW!",
 
   // Student Coordinators from Poster
@@ -115,12 +124,24 @@ export const hackathon = {
       role: "Student Coordinator"
     },
     {
-      name: "AKSHAYA S",
+      name: "AKSHAYA R",
       phone: "+919894906986",
       displayPhone: "9894906986",
       role: "Student Coordinator"
+    },
+    {
+      name: "MOHAN RAJ. R",
+      phone: "+919025886070",
+      displayPhone: "9025886070",
+      role: "Student Coordinator"
     }
   ] as Coordinator[],
+
+  // Faculty Coordinator from Poster
+  facultyCoordinator: {
+    name: "Mrs. K. Kalaivani",
+    role: "Faculty Coordinator"
+  } as FacultyCoordinator,
 
   // 4 Core Pillars from the Poster
   pillars: [
@@ -161,89 +182,90 @@ export const hackathon = {
   // "What To Expect" from the Poster
   whatToExpect: [
     {
-      title: "EXCITING PRIZES",
-      desc: "Grand cash prizes, sponsor bounties, tech kits, and accelerator opportunities for winning teams.",
+      title: "PRIZE POOL UP TO ₹20,000",
+      desc: "Grand cash prize pool up to ₹20,000, sponsor bounties, tech kits, and accelerator opportunities.",
       longDescription: "Compete for your share of the ₹20,000 cash prize pool, hard-earned trophies, prestigious plaques, and exclusive seed grant access via SNS 1000 I-Startups.",
       icon: "Trophy",
       highlights: [
-        "Direct cash awards from ₹20,000 pool",
+        "Prize Pool Up To ₹20,000",
         "SNS 1000 I-Startups Incubation Access",
         "Official winners trophies & mementos",
         "Special AI Track & Design Thinking awards"
       ]
     },
     {
-      title: "WINNER & PARTICIPATION CERTIFICATES",
+      title: "PARTICIPATION CERTIFICATE FOR ALL",
       desc: "Official certified recognition for all team members endorsed by SNS College of Technology.",
       longDescription: "Every registered hacker who presents a working solution receives an officially verified Certificate of Participation endorsed by SNS College of Technology (Autonomous).",
       icon: "Award",
       highlights: [
+        "Participation Certificate for All",
         "Globally recognized autonomous college credential",
-        "Endorsed by Department of AI & Computer Science",
-        "Individual certificate for every team member",
-        "Verifiable digital and hard-copy credentials"
+        "Endorsed by IV CS Stream Cluster & Department of AI/CS",
+        "Individual certificate for every team member"
       ]
     },
     {
-      title: "MENTORING BY INDUSTRY EXPERTS",
-      desc: "Live guidance, architectural feedback, and technical mentorship from leading AI and tech professionals.",
-      longDescription: "Engage in dedicated 1-on-1 breakout rounds with senior machine learning engineers, AI founders, and cloud architects stationed at the SNS AI Campus throughout the 24 hours.",
-      icon: "UserCheck",
+      title: "TOP TEAM GETS AN INTERNSHIP OPPORTUNITY",
+      desc: "Exclusive internship offer for the winning squad with top tech firms and AI startup partners.",
+      longDescription: "The top winning team gains direct internship placement opportunities to build production AI systems with leading startup partners and SNS AI incubators.",
+      icon: "Briefcase",
       highlights: [
-        "Technical architecture & pipeline reviews",
-        "Live debugging & deployment assistance",
-        "Pitch and demo presentation polishing",
-        "Insights into real-world production AI scale"
+        "Direct internship placement for top winning team",
+        "1-on-1 mentorship with tech founders",
+        "Fast-track incubation at SNS 1000 I-Startups",
+        "Real-world AI deployment experience"
       ]
     },
     {
-      title: "NETWORKING OPPORTUNITIES",
-      desc: "Connect with passionate student innovators, tech leads, startup founders, and talent recruiters.",
-      longDescription: "Immerse yourself among hundreds of top student developers, AI researchers, designers, and tech leaders gathered under one roof at the SNS AI Campus.",
-      icon: "Network",
+      title: "FOOD & BEVERAGES (3 MEALS + 4 REFRESHMENTS)",
+      desc: "Complete 24-hour food & beverage coverage including 3 full meals and 4 refreshment breaks.",
+      longDescription: "Stay energized throughout the 24 hours with complimentary high-protein meals, midnight coffee, snacks, and 4 scheduled refreshment breaks provided at SNS AI Campus.",
+      icon: "Utensils",
       highlights: [
-        "Connect with high-caliber peer builders",
-        "Direct access to hiring partners & startup founders",
-        "Collaborate across inter-college squads",
-        "Alumni network across top tech firms"
+        "3 Gourmet Meals (Lunch, Dinner, Breakfast)",
+        "4 Refreshment & Coffee Breaks",
+        "Midnight snack surge & energy boosters",
+        "100% complimentary for all registered participants"
       ]
     },
     {
-      title: "BUILD SOLUTIONS THAT CREATE REAL IMPACT",
-      desc: "Turn creative concepts into real, working prototypes capable of solving urgent real-world problems.",
-      longDescription: "Utilize the proven SNS Design Thinking Framework to validate market problems, test technical viability, and turn 24 hours of intense hacking into long-term venture opportunities.",
-      icon: "Sparkles",
+      title: "REGISTRATION FEE ₹500 / PERSON",
+      desc: "Affordable ₹500 per person entry fee covering 24-hour campus facilities, meals, Wi-Fi, and mentoring.",
+      longDescription: "All-inclusive registration fee of ₹500 per person giving complete 24-hour access to DT Playhouse, high-speed Wi-Fi, lab equipment, 3 meals, 4 refreshments, and certificates.",
+      icon: "CreditCard",
       highlights: [
-        "SNS Design Thinking Framework playbook",
-        "Real-world healthcare, defense & green problems",
-        "Pathway to 10 LPA and venture funding",
-        "Deployment to live production servers"
+        "Flat ₹500 per person fee",
+        "Includes 3 meals + 4 refreshments",
+        "Covers full 24-hour campus lab access",
+        "Participation certificate for every builder"
       ]
     }
   ] as Expectation[],
 
   organizer: {
+    streamCluster: "IV CS STREAM CLUSTER",
+    department: "DEPARTMENT OF ARTIFICIAL INTELLIGENCE & COMPUTER SCIENCE",
     college: "SNS COLLEGE OF TECHNOLOGY",
     campus: "SNS AI CAMPUS",
     location: "COIMBATORE",
     pincode: "641035",
     collegeUrl: "https://snsct.org/",
     groupUrl: "https://www.snsgroups.com/",
-    department: "DEPARTMENT OF ARTIFICIAL INTELLIGENCE & COMPUTER SCIENCE",
     institutionTag: "SNSCT",
     accreditation: "An Autonomous Institution | Coimbatore - 641035",
     groupName: "SNS INSTITUTIONS",
     slogan: "Redesigning Common Minds & Business Towards Excellence",
     startupsMilestone: "Celebrating 1000 I-Startups in 10 years",
     playbookSlogan: "Design Thinking Playbook — A Pathway to 10LPA and beyond",
-    frameworkTag: "Build an Entrepreneurial Mindset Through Our Design Thinking Framework"
+    frameworkTag: "1st GenAI Powered Design Thinking FrameWork"
   } as OrganizerInfo,
 
   stats: [
     { value: "24", unit: "HOURS", label: "Non-Stop Building", description: "One Day. Endless Possibilities." },
-    { value: "9", unit: "OCT", label: "8-9 October 2026", description: "From 9:00 AM Onwards @ DT Playhouse" },
-    { value: "500", unit: "INR", label: "External Fee ₹500", description: "All-inclusive 24H hackathon experience" },
-    { value: "1000", unit: "STARTUPS", label: "SNS I-Startups", description: "Celebrated in 10 Years of Innovation" }
+    { value: "08-09", unit: "OCT", label: "08-09 October 2026", description: "From 9:00 AM Onwards @ SNS AI Campus" },
+    { value: "500", unit: "INR", label: "Fee ₹500 / Person", description: "Includes 3 meals, 4 refreshments & 24H access" },
+    { value: "20K", unit: "INR", label: "Prize Pool Up To ₹20,000", description: "Plus Internship Opportunity for Top Team" }
   ],
 
   tracks: [
@@ -353,57 +375,57 @@ export const hackathon = {
 
   timeline: [
     {
-      time: "17 SEP — 09:00 AM",
+      time: "08 OCT — 09:00 AM",
       title: "CHECK-IN, KIT COLLECTION & KICKOFF CEREMONY",
-      phase: "17 SEP • 09:00 AM",
+      phase: "08 OCT • 09:00 AM",
       description: "Arrival at DT Playhouse, SNS AI Campus, registration verification, kit collection, swag distribution, and electrifying kickoff ceremony.",
       highlight: "CHECK-IN & KICKOFF",
       icon: "DoorOpen"
     },
     {
-      time: "17 SEP — 10:30 AM",
+      time: "08 OCT — 10:30 AM",
       title: "HACKING COMMENCES",
-      phase: "17 SEP • 10:30 AM",
+      phase: "08 OCT • 10:30 AM",
       description: "The 24-hour clock officially begins! Teams claim workstations, assemble architecture, and initialize codebases.",
       highlight: "24H CLOCK STARTS",
       icon: "Code"
     },
     {
-      time: "17 SEP — 03:00 PM",
+      time: "08 OCT — 03:00 PM",
       title: "MENTORSHIP CHECKPOINT 1",
-      phase: "17 SEP • 03:00 PM",
+      phase: "08 OCT • 03:00 PM",
       description: "Architecture review with domain experts and SNS AI mentors to stress-test logic and offer domain guidance.",
       highlight: "ARCHITECTURE REVIEW",
       icon: "UserCheck"
     },
     {
-      time: "17 SEP — 08:00 PM",
+      time: "08 OCT — 08:00 PM",
       title: "DINNER & MID-WAY PROTOTYPE EVALUATION",
-      phase: "17 SEP • 08:00 PM",
-      description: "Refuel with dinner, rapid pitch tune-up, and mid-way working prototype evaluation by mentors and coordinators.",
+      phase: "08 OCT • 08:00 PM",
+      description: "Refuel with gourmet dinner, rapid pitch tune-up, and mid-way working prototype evaluation by mentors and coordinators.",
       highlight: "MID-WAY EVALUATION",
       icon: "Utensils"
     },
     {
-      time: "18 SEP — 00:00 AM",
+      time: "09 OCT — 00:00 AM",
       title: "MIDNIGHT ENERGY SURGE & BUG SQUASHING",
-      phase: "18 SEP • 00:00 AM",
-      description: "Midnight coffee boosts, energetic beats, rapid bug squashing sprint, and core AI model convergence.",
+      phase: "09 OCT • 00:00 AM",
+      description: "Midnight coffee boosts, energetic beats, rapid bug squashing sprint, midnight snacks, and core AI model convergence.",
       highlight: "MIDNIGHT ENERGY SURGE",
       icon: "Zap"
     },
     {
-      time: "18 SEP — 07:00 AM",
+      time: "09 OCT — 07:00 AM",
       title: "FEATURE FREEZE, GITHUB COMMIT & DECK SUBMISSION",
-      phase: "18 SEP • 07:00 AM",
+      phase: "09 OCT • 07:00 AM",
       description: "Feature freeze! Push final commits to GitHub, deploy live preview URLs, and synthesize pitch deck slides.",
       highlight: "FEATURE FREEZE",
       icon: "GitCommit"
     },
     {
-      time: "18 SEP — 10:30 AM",
+      time: "09 OCT — 10:30 AM",
       title: "GRAND DEMOS TO JURY, WINNER FELICITATION & CLOSING GALA",
-      phase: "18 SEP • 10:30 AM",
+      phase: "09 OCT • 10:30 AM",
       description: "Grand live project presentations to jury panel, winner felicitation ceremony, and closing gala!",
       highlight: "GRAND DEMOS & FELICITATION",
       icon: "Trophy"
@@ -415,15 +437,17 @@ export const hackathon = {
       title: "FIRST PLACE",
       amount: "WINNER",
       subtitle: "HACKNEXT'26 Champion",
-      longDescription: "The supreme champions of HACKNEXT'26 SERIES 2.0. Awarded to the team that demonstrates unprecedented technical execution, exceptional model performance, and commercial viability under the SNS Design Thinking framework.",
+      longDescription: "The supreme champions of HACKNEXT'26 SERIES 2.0. Awarded to the team that demonstrates unprecedented technical execution, exceptional model performance, and commercial viability under the 1st GenAI Powered Design Thinking framework.",
       perks: [
-        "Major Share of ₹20,000 Prize Pool",
+        "Major Share of Prize Pool Up To ₹20,000",
+        "Top Team Gets An Internship Opportunity",
         "Winner Trophy & Mementos",
         "SNS 1000 I-Startups Incubation Access",
         "Winner Certificates of Excellence"
       ],
       highlights: [
         "Direct cash prize disbursal upon finale ceremony",
+        "Top winning team receives exclusive internship offers",
         "Champion trophy engraved with team identity",
         "Direct venture pre-seed fast-track at SNS Incubation",
         "Priority media feature & campus recognition"
@@ -477,16 +501,16 @@ export const hackathon = {
       subtitle: "Guaranteed Recognition",
       longDescription: "Every single builder who codes through the 24 hours gains verifiable institutional credentials, lifelong networks, and battle-tested hacking experience.",
       perks: [
-        "Official Participation Certificates",
+        "Participation Certificate for All",
+        "Food & Beverages (3 Meals + 4 Refreshments)",
         "1-on-1 Mentoring by Industry AI Experts",
-        "High-Value Networking Opportunities",
         "24-Hour Campus Experience"
       ],
       highlights: [
         "Autonomous College Certificate with official stamp",
+        "Includes 3 Meals + 4 Refreshments",
         "Mentorship feedback from industry professionals",
-        "Complimentary high-speed campus facilities & Wi-Fi",
-        "Access to future SNS hackathons & accelerators"
+        "Complimentary high-speed campus facilities & Wi-Fi"
       ],
       badge: "FOR EVERYONE",
       featured: false
@@ -503,8 +527,8 @@ export const hackathon = {
   howItWorks: [
     {
       step: "01",
-      title: "SCAN QR TO OPEN FORM",
-      desc: "Scan the website QR or click the register link to open the official Google Form. The ₹500 fee payment QR is provided directly inside the form."
+      title: "SCAN QR TO REGISTER",
+      desc: "Scan the website QR or click the register button to message a coordinator on WhatsApp. Registration fee is ₹500 per person."
     },
     {
       step: "02",
@@ -514,12 +538,12 @@ export const hackathon = {
     {
       step: "03",
       title: "24 HOURS OF AI BUILDING",
-      desc: "Report at DT Playhouse, SNS AI Campus at 9:00 AM on 17 Sep. Hack non-stop with expert mentorship, Wi-Fi, and 24H facilities."
+      desc: "Report at DT Playhouse, SNS AI Campus at 9:00 AM on 08 October 2026. Hack non-stop with 3 meals, 4 refreshments, mentorship, and Wi-Fi."
     },
     {
       step: "04",
       title: "DEMO, WIN & TRANSFORM",
-      desc: "Pitch working solutions to the expert jury, showcase live demos, collect certificates, and claim exciting prizes!"
+      desc: "Pitch working solutions to the expert jury, showcase live demos, collect certificates, and claim exciting prizes up to ₹20,000!"
     }
   ],
 
@@ -527,32 +551,32 @@ export const hackathon = {
     {
       id: "faq-1",
       question: "What is HACKNEXT'26 Series 2.0?",
-      answer: "HACKNEXT'26 Series 2.0 is an elite AI-Powered 24-Hour Hackathon hosted at DT Playhouse, SNS AI Campus, SNS College of Technology (SNSCT), Coimbatore. It brings together ambitious student innovators from across the country to code, create, conquer, and transform real-world problems into intelligent products."
+      answer: "HACKNEXT'26 Series 2.0 is an elite 24-hour hackathon organized by the IV CS Stream Cluster at DT Playhouse, SNS AI Campus, SNS College of Technology (SNSCT), Coimbatore. It brings together ambitious student innovators to code, create, conquer, and transform real-world problems into intelligent products under the 1st GenAI Powered Design Thinking Framework."
     },
     {
       id: "faq-2",
       question: "When and where is HACKNEXT'26 taking place?",
-      answer: "The hackathon will take place in-person on 8 and 9 October 2026, kicking off from 9:00 AM onwards at DT Playhouse, SNS AI Campus, SNS College of Technology, Coimbatore - 641035."
+      answer: "The hackathon will take place in-person on 08 and 09 October 2026, kicking off from 9:00 AM onwards at SNS AI Campus, SNS College of Technology, Coimbatore - 641035."
     },
     {
       id: "faq-3",
-      question: "What is the participation fee and how do I pay?",
-      answer: "The participation fee is ₹500 for external participants. When you scan the website QR code or click 'OPEN REGISTRATION FORM', you are directed to the official Google Form. Inside the form, you will find the official Fee Payment QR Code to complete the ₹500 payment and upload your transaction proof."
+      question: "What is the participation fee and what does it include?",
+      answer: "The registration fee is ₹500 per person. It includes 24-hour campus access, high-speed Wi-Fi, 3 meals (lunch, dinner, breakfast), 4 refreshment breaks, mentorship, and participation certificates for all."
     },
     {
       id: "faq-4",
       question: "Who can participate and what is the team size?",
-      answer: "The hackathon is open to all undergraduate and postgraduate college students. Teams can comprise 2 to 4 members. Inter-departmental and inter-college team compositions are fully welcomed!"
+      answer: "The hackathon is open to all college students. Teams can comprise 1 to 4 members. Inter-departmental and inter-college team compositions are fully welcomed!"
     },
     {
       id: "faq-5",
       question: "What are the key perks and rewards?",
-      answer: "Participants enjoy exciting cash prizes, official winner and participation certificates, 1-on-1 mentoring by top industry experts, networking opportunities with tech leaders and founders, and potential incubator support through the SNS 1000 I-Startups ecosystem."
+      answer: "Participants compete for a prize pool up to ₹20,000, internship opportunities for top teams, participation certificates for all, 3 meals + 4 refreshments, and potential incubator support through SNS 1000 I-Startups."
     },
     {
       id: "faq-6",
       question: "Who can I contact for queries or travel assistance?",
-      answer: "You can reach out directly to our student coordinators: Gugan KM (+91 9361278375) or Akshaya S (+91 9894906986)."
+      answer: "You can reach out directly to our student coordinators: Gugan KM (+91 93612 78375), Akshaya R (+91 98949 06986), or Mohan Raj. R (+91 90258 86070)."
     }
   ] as FAQItem[],
 

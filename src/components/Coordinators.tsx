@@ -31,7 +31,7 @@ export default function Coordinators() {
       ],
       iconName: "Phone",
       accentColor: "#00E5FF",
-      actionText: "OPEN REGISTRATION FORM (₹500)",
+      actionText: "MESSAGE COORDINATOR ON WHATSAPP (₹500)",
       actionUrl: hackathon.registrationUrl,
     });
     setIsModalOpen(true);
@@ -67,7 +67,7 @@ export default function Coordinators() {
         </div>
 
         {/* Coordinators Grid with Pop-Up Action */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {hackathon.coordinators.map((coordinator: Coordinator, idx: number) => (
             <motion.div
               key={coordinator.name}
@@ -76,7 +76,7 @@ export default function Coordinators() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.15, duration: 0.4 }}
-              className="card-playful p-8 bg-white flex flex-col justify-between cursor-pointer transform hover:-translate-y-3 hover:scale-[1.02] hover:shadow-[12px_12px_0px_0px_#00E5FF] active:scale-[0.98] transition-all duration-200 group"
+              className="card-playful p-6 bg-white flex flex-col justify-between cursor-pointer transform hover:-translate-y-3 hover:scale-[1.02] hover:shadow-[12px_12px_0px_0px_#00E5FF] active:scale-[0.98] transition-all duration-200 group"
               role="button"
               tabIndex={0}
               onKeyDown={(e) => {
@@ -89,32 +89,32 @@ export default function Coordinators() {
               <div>
                 {/* Top Badge */}
                 <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-2">
-                    <span className="font-mono text-xs font-bold uppercase tracking-widest bg-meshYellow text-meshBlack px-2.5 py-1 border border-meshBlack">
+                  <div className="flex items-center gap-1.5">
+                    <span className="font-mono text-[10px] font-bold uppercase tracking-widest bg-meshYellow text-meshBlack px-2 py-0.5 border border-meshBlack">
                       {coordinator.role}
                     </span>
-                    <span className="font-mono text-[10px] font-bold uppercase bg-[#00E5FF] text-black px-2 py-0.5 border border-black group-hover:bg-[#FFD21F] transition-colors">
+                    <span className="font-mono text-[9px] font-bold uppercase bg-[#00E5FF] text-black px-1.5 py-0.5 border border-black group-hover:bg-[#FFD21F] transition-colors">
                       POP UP ↗
                     </span>
                   </div>
-                  <div className="w-10 h-10 rounded-full bg-meshBlack text-meshYellow flex items-center justify-center border-2 border-meshBlack shadow-retro group-hover:rotate-12 transition-transform">
-                    <User className="w-5 h-5" />
+                  <div className="w-8 h-8 rounded-full bg-meshBlack text-meshYellow flex items-center justify-center border-2 border-meshBlack shadow-retro group-hover:rotate-12 transition-transform">
+                    <User className="w-4 h-4" />
                   </div>
                 </div>
 
-                <h3 className="font-display font-black text-2xl sm:text-3xl text-meshBlack uppercase group-hover:text-[#00E5FF] transition-colors">
+                <h3 className="font-display font-black text-xl sm:text-2xl text-meshBlack uppercase group-hover:text-[#00E5FF] transition-colors">
                   {coordinator.name}
                 </h3>
 
-                <p className="font-mono text-xs text-meshGray font-bold mt-1">
-                  HACKNEXT'26 Organizing Committee
+                <p className="font-mono text-[11px] text-meshGray font-bold mt-0.5">
+                  IV CS Stream Cluster
                 </p>
 
-                <div className="my-6 p-4 bg-meshOffWhite border-2 border-meshBlack">
-                  <span className="font-mono text-[10px] uppercase font-bold text-meshGray block mb-1">
-                    PRIMARY PHONE / WHATSAPP
+                <div className="my-4 p-3 bg-meshOffWhite border-2 border-meshBlack">
+                  <span className="font-mono text-[9px] uppercase font-bold text-meshGray block mb-0.5">
+                    PHONE / WHATSAPP
                   </span>
-                  <span className="font-display font-black text-2xl text-meshBlack tracking-wider">
+                  <span className="font-display font-black text-xl text-meshBlack tracking-wider">
                     {coordinator.displayPhone}
                   </span>
                 </div>
@@ -122,31 +122,59 @@ export default function Coordinators() {
 
               {/* Action Buttons */}
               <div
-                className="grid grid-cols-2 gap-3 pt-4 border-t-2 border-meshBlack"
+                className="grid grid-cols-2 gap-2 pt-3 border-t-2 border-meshBlack"
                 onClick={(e) => e.stopPropagation()}
               >
                 <a
                   href={`tel:${coordinator.phone}`}
-                  className="inline-flex items-center justify-center gap-2 font-display font-black text-xs uppercase bg-meshBlack text-meshYellow py-3 border border-meshBlack shadow-retro hover:bg-meshYellow hover:text-meshBlack transition-colors"
+                  className="inline-flex items-center justify-center gap-1 font-display font-black text-[11px] uppercase bg-meshBlack text-meshYellow py-2.5 border border-meshBlack shadow-retro hover:bg-meshYellow hover:text-meshBlack transition-colors"
                 >
-                  <Phone className="w-4 h-4" /> CALL NOW
+                  <Phone className="w-3.5 h-3.5" /> CALL
                 </a>
 
                 <a
                   href={`https://wa.me/${coordinator.phone.replace("+", "")}?text=Hi%20${coordinator.name},%20I%20have%20a%20query%20regarding%20HACKNEXT'26%20Hackathon`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 font-display font-black text-xs uppercase bg-white text-meshBlack py-3 border border-meshBlack shadow-retro hover:bg-green-500 hover:text-white transition-colors"
+                  className="inline-flex items-center justify-center gap-1 font-display font-black text-[11px] uppercase bg-white text-meshBlack py-2.5 border border-meshBlack shadow-retro hover:bg-green-500 hover:text-white transition-colors"
                 >
-                  <MessageSquare className="w-4 h-4" /> WHATSAPP
+                  <MessageSquare className="w-3.5 h-3.5" /> WHATSAPP
                 </a>
               </div>
             </motion.div>
           ))}
         </div>
 
+        {/* Faculty Coordinator Banner from Poster */}
+        {hackathon.facultyCoordinator && (
+          <div className="mt-8 max-w-6xl mx-auto p-5 bg-[#00E5FF]/10 border-2 border-[#00E5FF] shadow-retro flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-black text-[#00E5FF] border-2 border-black flex items-center justify-center font-display font-black text-base shadow-retro">
+                FC
+              </div>
+              <div>
+                <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-meshGray block">
+                  FACULTY COORDINATOR
+                </span>
+                <span className="font-display font-black text-lg text-meshBlack">
+                  {hackathon.facultyCoordinator.name}
+                </span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <span className="font-mono text-xs font-bold uppercase bg-black text-[#00E5FF] px-3 py-1 border border-black">
+                {hackathon.organizer.streamCluster}
+              </span>
+              <span className="font-mono text-xs font-bold uppercase bg-meshYellow text-black px-3 py-1 border border-black">
+                SNSCT
+              </span>
+            </div>
+          </div>
+        )}
+
         {/* Location & Support Info Strip */}
-        <div className="mt-12 max-w-4xl mx-auto p-6 bg-white border-2 border-meshBlack shadow-retro flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-8 max-w-6xl mx-auto p-6 bg-white border-2 border-meshBlack shadow-retro flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3 text-left">
             <div className="w-12 h-12 bg-meshYellow border-2 border-meshBlack flex items-center justify-center shrink-0">
               <MapPin className="w-6 h-6 text-meshBlack" />

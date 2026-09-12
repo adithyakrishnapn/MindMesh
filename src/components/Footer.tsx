@@ -104,8 +104,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/#prizes" className="hover:text-[#00E5FF] transition-colors">
-                  EXCITING PRIZES
+                <a href="/#community" className="hover:text-emerald-400 transition-colors text-emerald-400 font-bold">
+                  💬 JOIN WHATSAPP COMMUNITY
                 </a>
               </li>
               <li className="pt-2 border-t border-gray-800">
